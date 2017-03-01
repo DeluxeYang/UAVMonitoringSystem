@@ -1,8 +1,0 @@
-INFO 2016-11-04 17:27:09,816 frontend.views.job.frontend_my_job_delete,Deluxe,Job Deleted.{ID:1,Job_id:None,describe:,status:0,person_in_charge:1,start_time:2016-11-04 14:55:11+00:00,end_time:2016-11-04 14:55:13+00:00,uav_need:1,uav_selected:0,each_pay:10000,job_type:ÒºÌ¬Ò©,farm_type:¹ûÊ÷,nation:110101,address:1,job_border{0: {'lng': 116.20163, 'longitude': None, 'latitude': None, 'lat': 40.098925}}}
-INFO 2016-11-04 17:27:54,625 frontend.views.job.frontend_my_job_delete,Deluxe,Job Deleted.{ID:1,Job_id:None,describe:,status:0,person_in_charge:0,start_time:2016-08-26 09:48:33+00:00,end_time:2016-08-26 09:48:35+00:00,uav_need:1,uav_selected:0,each_pay:1000,job_type:·Û×´Ò©,farm_type:¸ß¸Ë×÷Îï,nation:110105,address:0,job_border{0: {'lng': 116.402994, 'lat': 39.969655, 'longitude': None, 'latitude': None}, 1: {'lng': 116.407881, 'lat': 39.96512, 'longitude': None, 'latitude': None}, 2: {'lng': 116.412049, 'lat': 39.96512, 'longitude': None, 'latitude': None}, 3: {'lng': 116.411474, 'lat': 39.968217, 'longitude': None, 'latitude': None}}}
-INFO 2016-11-04 17:31:19,617 frontend.views.job.frontend_my_job_delete,Deluxe,Job Delete Failed.{ID:1,Job_id:33}
-Traceback (most recent call last):
-  File "C:\uav\frontend\views\job\frontend_my_job_delete.py", line 49, in frontend_my_job_delete
-    job_border = Joab_Border.objects.filter(job=job)
-NameError: name 'Joab_Border' is not defined
-

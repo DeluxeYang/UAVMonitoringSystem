@@ -1,6 +1,0 @@
-INFO 2016-11-04 14:55:16,734 frontend.views.job.frontend_my_job_add,Deluxe,Add new Job Failed.
-Traceback (most recent call last):
-  File "C:\uav\frontend\views\job\frontend_my_job_add.py", line 106, in frontend_my_job_add
-    Job_aBorder_to_Rtree_single.delay(job.id)
-NameError: name 'Job_aBorder_to_Rtree_single' is not defined
-

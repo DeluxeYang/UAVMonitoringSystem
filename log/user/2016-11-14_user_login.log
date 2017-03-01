@@ -1,3 +1,0 @@
-INFO 2016-11-14 14:27:44,076 common.views.login, Deluxe, Login Success.{ID:1,IP:127.0.0.1}
-INFO 2016-11-14 14:31:07,041 common.views.login, Deluxe, Login Success.{ID:1,IP:127.0.0.1}
-INFO 2016-11-14 17:23:41,002 common.views.logout, Deluxe, Logout Success.{ID:1,IP:127.0.0.1,Duration:2:52:34.970652}
