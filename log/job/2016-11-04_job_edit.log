@@ -1,0 +1,27 @@
+INFO 2016-11-04 16:22:39,698 frontend.views.job.frontend_my_job_detail,Deluxe.{ID:1,Job_id:122}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_my_job_detail.py", line 33, in frontend_my_job_detail
+    job = Job.objects.get(id=job_id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: Job matching query does not exist.
+
+INFO 2016-11-04 16:24:02,051 frontend.views.job.frontend_my_job_detail,Deluxe.{ID:1,Job_id:15}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_my_job_detail.py", line 33, in frontend_my_job_detail
+    job = Job.objects.get(id=job_id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: Job matching query does not exist.
+
+INFO 2016-11-04 17:03:03,768 frontend.views.job.frontend_my_job_detail,Deluxe,Edit Job Failed.{ID:1,Job_id:1}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_my_job_detail.py", line 106, in frontend_my_job_detail
+    +',farm_type:'+original_farm_type+'}')
+TypeError: Can't convert 'int' object to str implicitly
+
+INFO 2016-11-04 17:04:36,168 frontend.views.job.frontend_my_job_detail,Deluxe,Edit Job Successed.{ID:1,Job_id:1,describe:身体秒树书哈的阿迪啊,status:0,person_in_charge:Deluxe,start_time:2015-05-20 00:00:00+00:00,end_time:2015-05-20 09:00:00+00:00,uav_need:2,uav_selected:2,each_pay:5000,job_type:液态药,farm_type:高杆作物}

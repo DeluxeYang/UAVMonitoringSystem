@@ -1,0 +1,75 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "backend_job_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+        	<ul class="nav nav-pills">
+				<li class="active">
+					 <a> 作业 {{job.id}} 详情</a>
+				</li>
+			</ul>
+    		<form role="form" method="post" id="job_form">
+    			{% csrf_token %}
+				<div class="form-group">
+					 <label for="exampleInputEmail1">作业流水号</label><input type="text" class="form-control" value="{{job.number}}" readonly id="id_number" name="number"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">所属用户</label><input type="text" class="form-control" value="{{job.user.username}}" readonly id="id_user" name="user"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业类型</label><input type="text" class="form-control" value="{{job.job_type.type}}" readonly id="id_user" name="user"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">农业类型</label><input type="text" class="form-control" value="{{job.farm_type.type}}" readonly id="id_user" name="user"/>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">执行作业的无人机</label>
+					 {% for u in job_detail %}
+					 <a href="/backend/uavjobdetail/?id={{u.id}}" class="form-control alert-info">查看无人机{{u.uav.uav_id_code}}飞行记录</a>
+					 {% endfor %}
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业状态</label><input type="text" class="form-control" value=
+					 "{% ifequal job.status 0  %}未开始{% endifequal %}{% ifequal job.status 1 %}进行中{% endifequal %}{% ifequal job.status 2 %}已完成{% endifequal %}"
+					readonly id="id_status" name="status"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业所在地</label><input type="text" class="form-control" id="id_address" name="address" value="{{province.province}}，{{city.city}}，{{district.district}}，{{job.address}} " readonly/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业描述</label><input type="text" class="form-control" value="{{job.describe|default:""}}" readonly id="id_describe" name="describe"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">边界文件</label><input type="text" class="form-control" value="{{job.border_file|default:""}}" readonly id="id_border_file" name="border_file"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">边界文件描述</label><input type="text" class="form-control" value="{{job.border_describe|default:""}}" readonly id="id_border_describe" name="border_describe"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">负责人</label><input type="text" class="form-control" value="{{job.person_in_charge|default:""}}" readonly id="id_person_in_charge" name="person_in_charge"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">开始时间</label><input type="text" class="form-control" value="{{job.start_time|date:"Y-m-d H:i:s"}}" readonly id="id_start_time" name="start_time"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">结束时间</label><input type="text" class="form-control" value="{{job.end_time|date:"Y-m-d H:i:s"}}" readonly id="id_end_time" name="end_time"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">需求无人机数目</label><input type="text" class="form-control" id="id_uav_need" name="uav_need" value="{{job.uav_need}}" readonly />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">已选无人机数目</label><input type="text" class="form-control" id="id_uav_selected" name="uav_selected" value="{{job.uav_selected}}" readonly />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">每台无人机报酬(元)</label><input type="text" class="form-control" id="id_each_pay" name="each_pay" value="{{job.each_pay}}" readonly />
+				</div>
+
+
+			</form>
+	</div>
+</div>
+{% endblock %}

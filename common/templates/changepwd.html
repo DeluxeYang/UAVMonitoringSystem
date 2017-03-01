@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-md-4 column">
+    </div>
+    <div class="col-md-4 column">
+        <form role="form" method="post" id="user_add_form">
+            {% csrf_token %}
+            <div class="form-group" >
+            {% for field in form %}
+                {{ field.label_tag }}
+                {{ field }} 
+                {{ field.errors }}
+            {% endfor %}
+            </div>
+            <p class="form-actions">
+                <input type="submit" value="确认" class="btn btn-default btn-success">
+            </p>
+        </form>
+    </div>
+    <div class="col-md-4 column">
+    </div>
+</div>
+ 
+{% endblock %}

@@ -1,0 +1,33 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "backend_user_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+    		<ul class="nav nav-pills">
+				<li class="active">
+					 <a>搜索用户</a>
+				</li>
+			</ul>
+			<form method="post" role="search" id="user_username_search" class="form">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="exampleInputText">通过用户名搜索</label>
+					<input type="text" class="form-control" id="id_username" name="username"/>
+				</div> 
+				<button type="submit" class="btn btn-primary">搜索</button>
+			</form>
+			<form method="post" role="search" id="user_email_search" class="form">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="exampleInputText">通过邮箱搜索</label>
+					<input type="email" class="form-control" id="id_emaile" name="email"/>
+				</div> 
+				<button type="submit" class="btn btn-primary">搜索</button>
+			</form>
+	</div>
+</div>
+{% endblock %}

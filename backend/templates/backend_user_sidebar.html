@@ -1,0 +1,19 @@
+{% block sidebar %}
+	<div class="list-group">
+		<a class="list-group-item active">用户管理</a>
+			<div class="list-group-item">
+				<a href="/backend/usermanage/">普通用户</a>
+			</div>
+			<div class="list-group-item">
+				<a href="/backend/usermanage/?is_admin=1">管理员</a>
+			</div>
+		<a class="list-group-item active">添加用户</a>
+			<div class="list-group-item">
+				<a href="/backend/useradd/">添加用户</a>
+			</div>
+		<a class="list-group-item active">搜索用户</a>
+			<div class="list-group-item">
+				<a href="/backend/usersearch/">用户搜索</a>
+			</div>
+	</div>
+{% endblock %}

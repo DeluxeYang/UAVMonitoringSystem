@@ -1,0 +1,252 @@
+WARNING 2016-10-16 18:35:59,895 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,896 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,896 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,896 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,895 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,896 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,896 Not Found: /announce.php
+WARNING 2016-10-16 18:35:59,896 Not Found: /announce.php
+WARNING 2016-10-16 18:36:01,466 Not Found: /announce.php
+WARNING 2016-10-16 18:36:01,467 Not Found: /announce.php
+WARNING 2016-10-16 18:36:01,468 Not Found: /announce.php
+WARNING 2016-10-16 18:36:01,466 Not Found: /announce.php
+WARNING 2016-10-16 18:36:01,467 Not Found: /announce.php
+WARNING 2016-10-16 18:36:01,468 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,480 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,482 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,483 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,485 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,480 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,482 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,483 Not Found: /announce.php
+WARNING 2016-10-16 18:37:52,485 Not Found: /announce.php
+WARNING 2016-10-16 18:37:55,461 Not Found: /announce.php
+WARNING 2016-10-16 18:37:55,461 Not Found: /announce.php
+WARNING 2016-10-16 18:38:04,459 Not Found: /announce.php
+WARNING 2016-10-16 18:38:04,459 Not Found: /announce.php
+WARNING 2016-10-16 18:40:10,461 Not Found: /announce.php
+WARNING 2016-10-16 18:40:10,462 Not Found: /announce.php
+WARNING 2016-10-16 18:40:10,463 Not Found: /announce.php
+WARNING 2016-10-16 18:40:10,461 Not Found: /announce.php
+WARNING 2016-10-16 18:40:10,462 Not Found: /announce.php
+WARNING 2016-10-16 18:40:10,463 Not Found: /announce.php
+WARNING 2016-10-16 18:40:13,466 Not Found: /announce.php
+WARNING 2016-10-16 18:40:13,466 Not Found: /announce.php
+WARNING 2016-10-16 18:40:22,466 Not Found: /announce.php
+WARNING 2016-10-16 18:40:22,466 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,475 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,477 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,479 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,481 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,475 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,477 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,479 Not Found: /announce.php
+WARNING 2016-10-16 19:06:01,481 Not Found: /announce.php
+WARNING 2016-10-16 19:06:04,473 Not Found: /announce.php
+WARNING 2016-10-16 19:06:04,476 Not Found: /announce.php
+WARNING 2016-10-16 19:06:04,479 Not Found: /announce.php
+WARNING 2016-10-16 19:06:04,473 Not Found: /announce.php
+WARNING 2016-10-16 19:06:04,476 Not Found: /announce.php
+WARNING 2016-10-16 19:06:04,479 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,461 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,463 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,465 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,467 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,461 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,463 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,465 Not Found: /announce.php
+WARNING 2016-10-16 19:07:55,467 Not Found: /announce.php
+WARNING 2016-10-16 19:07:58,439 Not Found: /announce.php
+WARNING 2016-10-16 19:07:58,439 Not Found: /announce.php
+WARNING 2016-10-16 19:08:07,437 Not Found: /announce.php
+WARNING 2016-10-16 19:08:07,437 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,481 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,484 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,487 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,491 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,481 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,484 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,487 Not Found: /announce.php
+WARNING 2016-10-16 19:10:22,491 Not Found: /announce.php
+WARNING 2016-10-16 19:10:25,436 Not Found: /announce.php
+WARNING 2016-10-16 19:10:25,436 Not Found: /announce.php
+ERROR 2016-10-16 19:17:44,316 Internal Server Error: /jobadd/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 146, in execute
+    result = self._query(query)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 296, in _query
+    conn.query(q)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 781, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 942, in _read_query_result
+    result.read()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 1138, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 906, in _read_packet
+    packet.check_error()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 367, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1062, "Duplicata du champ '20161016' pour la clef 'number'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\frontend\views\job\frontend_my_job_add.py", line 95, in frontend_my_job_add
+    job.save()
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\sql\compiler.py", line 971, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\utils\six.py", line 658, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 146, in execute
+    result = self._query(query)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 296, in _query
+    conn.query(q)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 781, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 942, in _read_query_result
+    result.read()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 1138, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 906, in _read_packet
+    packet.check_error()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 367, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1062, "Duplicata du champ '20161016' pour la clef 'number'")
+ERROR 2016-10-16 19:17:44,316 Internal Server Error: /jobadd/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 146, in execute
+    result = self._query(query)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 296, in _query
+    conn.query(q)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 781, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 942, in _read_query_result
+    result.read()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 1138, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 906, in _read_packet
+    packet.check_error()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 367, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.IntegrityError: (1062, "Duplicata du champ '20161016' pour la clef 'number'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\frontend\views\job\frontend_my_job_add.py", line 95, in frontend_my_job_add
+    job.save()
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\models\sql\compiler.py", line 971, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\utils\six.py", line 658, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 146, in execute
+    result = self._query(query)
+  File "C:\Python34\lib\site-packages\pymysql\cursors.py", line 296, in _query
+    conn.query(q)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 781, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 942, in _read_query_result
+    result.read()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 1138, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 906, in _read_packet
+    packet.check_error()
+  File "C:\Python34\lib\site-packages\pymysql\connections.py", line 367, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "C:\Python34\lib\site-packages\pymysql\err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+django.db.utils.IntegrityError: (1062, "Duplicata du champ '20161016' pour la clef 'number'")
+WARNING 2016-10-16 19:17:45,837 Not Found: /favicon.ico
+WARNING 2016-10-16 19:17:45,837 Not Found: /favicon.ico
+ERROR 2016-10-16 19:18:30,213 Internal Server Error: /jobadd/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\frontend\views\job\frontend_my_job_add.py", line 107, in frontend_my_job_add
+    logger_add.info(__name__+','+nowuser.username+',Add a new Job.{ID:'+nowuser.id+',Job_id:'+job.id+'}')
+TypeError: Can't convert 'int' object to str implicitly
+ERROR 2016-10-16 19:18:30,213 Internal Server Error: /jobadd/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django-1.8.1-py3.4.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\frontend\views\job\frontend_my_job_add.py", line 107, in frontend_my_job_add
+    logger_add.info(__name__+','+nowuser.username+',Add a new Job.{ID:'+nowuser.id+',Job_id:'+job.id+'}')
+TypeError: Can't convert 'int' object to str implicitly

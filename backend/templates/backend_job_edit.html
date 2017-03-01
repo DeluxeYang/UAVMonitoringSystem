@@ -1,0 +1,165 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "backend_job_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+        	<ul class="nav nav-pills">
+				<li class="active">
+					 <a> 作业 {{job.id}} 编辑</a>
+				</li>
+			</ul>
+    		<form role="form" method="post" id="job_edit_form" enctype="multipart/form-data">
+    			{% csrf_token %}
+    			<div class="form-group">
+					 <label for="exampleInputText">作业流水号</label><input type="text" class="form-control" value="{{job.number}}" id="id_number" name="number" readonly />
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">所属用户</label>				
+					<select class="form-control" id="id_user" name="user">
+						<option value ="{{job.user.id}}">{{job.user.username}}</option>
+					{% for u in user %}
+						<option value ="{{u.id}}">{{u.username}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择作业类型</label>				
+					<select class="form-control" id="id_job_type" name="job_type">
+						<option value ="{{job.job_type.id}}">{{job.job_type.type}}</option>
+					{% for u in job_type_list %}
+						<option value ="{{u.id}}">{{u.type}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择农业类型</label>				
+					<select class="form-control" id="id_farm_type" name="farm_type">
+						<option value ="{{job.farm_type.id}}">{{job.farm_type.type}}</option>
+					{% for u in farm_type_list %}
+						<option value ="{{u.id}}">{{u.type}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业描述</label>
+					 <input type="text" class="form-control" id="id_describe" name="describe" value="{{job.describe}}" />
+				</div>
+<!--				<div class="form-group">
+					 <label for="exampleInputText">GIS边界文件上传</label>
+					 <input type="file" class="form-control" id="id_border_file" name="border_file" value="{{job.border_file}}"/>
+				</div>
+ 				{% if job.border_file %}
+<label for="exampleInputText">已上传文件</label>
+<input style="border:0;" type="text" id="id_border_file_L" name="border_file_L" value="{{job.border_file}}" readonly />
+<input onClick="javascript:button_onclick();" type="button"   value="清空">
+<script type="text/javascript">
+function button_onclick(){
+	document.getElementById('id_border_file_L').value = "";
+}
+</script>
+{% endif %}
+<div class="form-group">
+	 <label for="exampleInputText">边界文件描述</label>
+	 <input type="text" class="form-control" id="id_border_describe" name="border_describe" value="{{job.border_describe|default:"" }}"/>
+</div> -->
+				<div class="form-group">
+					<label for="exampleInputText">作业状态</label>				
+					<select class="form-control" id="id_status" name="status">
+						<option value ="{{job.status}}">
+						{% ifequal job.status 0  %}
+							未开始</option>
+							<option value ="1">进行中</option>
+							<option value ="2">已完成</option>
+						{% endifequal %}
+						{% ifequal job.status 1 %}
+							进行中</option>
+							<option value ="0">未开始</option>
+							<option value ="2">已完成</option>
+						{% endifequal %}
+						{% ifequal job.status 2 %}
+							已完成</option>
+							<option value ="0">未开始</option>
+							<option value ="1">进行中</option>
+						{% endifequal %}
+					</select>
+				</div>
+				<div class="distpicker">
+					<div class="form-inline">
+					<label for="">作业所在地</label><br>
+						<div class="form-group">
+							<label class="sr-only" for="id_province">Province</label>
+							<select class="form-control" id="id_province" name="province">
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_city">City</label>
+							<select class="form-control" id="id_city" name="city"></select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_district">District</label>
+							<select class="form-control" id="id_district" name="district"></select>
+						</div>
+						</div>
+				</div>
+				<script type="text/javascript">
+					$(".distpicker").distpicker({
+						province: "{{province.province}}",
+						city: "{{city.city}}",
+						district: "{{district.district}}"
+					});
+				</script>
+				<div class="form-group">
+					 <label for="exampleInputText">详细地址</label><input type="text" class="form-control" id="id_address" name="address" value="{{job.address}}"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">负责人</label><input type="text" class="form-control" id="id_person_in_charge" name="person_in_charge" value="{{job.person_in_charge}}" />
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">开始时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_start_time" name="start_time" size="16" type="text" value="{{job.start_time|date:"Y-m-d H:i:s"}}" required="required">
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+				<div class="form-group">
+                	<label for="exampleInputText">最晚结束时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_end_time" name="end_time" size="16" type="text" value="{{job.end_time|date:"Y-m-d H:i:s"}}" required="required">
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+	//language:  'fr',
+	weekStart: 1,
+	todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+	showMeridian: 1
+});
+</script>
+				<div class="form-group">
+					 <label for="exampleInputText">需求无人机数目</label><input type="text" class="form-control" id="id_uav_need" name="uav_need" value="{{job.uav_need}}" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">已选无人机数目</label><input type="text" class="form-control" id="id_uav_selected" name="uav_selected" value="{{job.uav_selected}}" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">每台无人机报酬(元)</label><input type="text" class="form-control" id="id_each_pay" name="each_pay" value="{{job.each_pay}}" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required"/>
+				</div>
+    			
+                <button type="submit" class="btn btn-primary">提交</button>
+			</form>
+	</div>
+</div>
+{% endblock %}

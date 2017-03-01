@@ -1,0 +1,190 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "profile_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					作业详情
+					<input type="button" id="id_button_edit" name="button_edit" class="button pull-right" value="开启编辑" onclick="doclick1();"/>
+				</h3>
+			</div>
+<script>/*  */
+function doclick1(){
+	var describe = document.getElementById("id_describe");
+	var job_type = document.getElementById("id_job_type");
+	var farm_type = document.getElementById("id_farm_type");
+	var status = document.getElementById("id_status");
+
+	var person_in_charge = document.getElementById("id_person_in_charge");
+	var start_time = document.getElementById("id_start_time");
+	var end_time = document.getElementById("id_end_time");
+	var uav_need = document.getElementById("id_uav_need");
+	var uav_selected = document.getElementById("id_uav_selected");
+	var each_pay = document.getElementById("id_each_pay");
+	var button_edit = document.getElementById("id_button_edit");
+	var button_submit = document.getElementById("id_button_submit");
+	if(describe.readOnly!=false)
+	{
+		describe.readOnly=false;
+		job_type.disabled=false;
+		farm_type.disabled=false;
+		status.disabled=false;
+		person_in_charge.readOnly=false;
+		start_time.readOnly=false;
+		end_time.readOnly=false;
+		uav_need.readOnly=false;
+		uav_selected.readOnly=false;
+		each_pay.readOnly=false;
+		button_edit.value="关闭编辑";
+		button_submit.style.display = "block";
+	}
+	else
+	{
+		describe.readOnly=true;
+		job_type.disabled=true;
+		farm_type.disabled=true;
+		status.disabled=true;
+		person_in_charge.readOnly=true;
+		start_time.readOnly=true;
+		end_time.readOnly=true;
+		uav_need.readOnly=true;
+		uav_selected.readOnly=true;
+		each_pay.readOnly=true;
+		button_edit.value="开启编辑";
+		button_submit.style.display = "none";
+
+	}
+}
+</script> 
+			<div class="panel-body">
+    		<form role="form" method="post" id="job_edit_form" enctype="multipart/form-data">
+    			{% csrf_token %}
+    			<div class="form-group">
+					 <label for="exampleInputText">作业流水号</label><input type="text" class="form-control" value="{{job.number}}" id="id_number" name="number" readonly />
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择作业类型</label>				
+					<select class="form-control" id="id_job_type" name="job_type" disabled="true">
+						<option value ="{{job.job_type.id}}">{{job.job_type.type}}</option>
+					{% for u in job_type_list %}
+						<option value ="{{u.id}}">{{u.type}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择农业类型</label>				
+					<select class="form-control" id="id_farm_type" name="farm_type" disabled="true">
+						<option value ="{{job.farm_type.id}}">{{job.farm_type.type}}</option>
+					{% for u in farm_type_list %}
+						<option value ="{{u.id}}">{{u.type}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				{% if job_detail %}
+				<div class="form-group">
+						<div class="form-group">
+							<label for="exampleInputText">无人机飞行记录</label>
+					 {% for u in job_detail %}
+					 		<a href="uavjobdetail/?id={{u.id}}" class="form-control alert-info"><center>无人机  {{u.uav.uav_id_code}}</center></a>
+					 {% endfor %}
+						</div>
+				</div>
+				{% endif %}
+				{% if job_apply %}
+				<div class="form-group">
+					 <label for="exampleInputText">无人机申请</label>
+					 	{% for u in job_apply %}
+					 		<a href="uavjobdetail/?id={{u.id}}" class="form-control alert-warning">
+					 			<center>
+					 		无人机  {{u.uav.uav_id_code}}  申请
+					 			</center>
+					 		</a>
+					 	{% endfor %}
+				</div>
+				{% endif %}
+				<div class="form-group" >
+					<label for="exampleInputText">作业状态</label>				
+					<select class="form-control" id="id_status" name="status" disabled="true">
+						<option value ="{{job.status}}">
+						{% ifequal job.status 0  %}
+							未开始</option>
+							<option value ="1">进行中</option>
+							<option value ="2">已完成</option>
+						{% endifequal %}
+						{% ifequal job.status 1 %}
+							进行中</option>
+							<option value ="0">未开始</option>
+							<option value ="2">已完成</option>
+						{% endifequal %}
+						{% ifequal job.status 2 %}
+							已完成</option>
+							<option value ="0">未开始</option>
+							<option value ="1">进行中</option>
+						{% endifequal %}
+					</select>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业描述</label>
+					 <input type="text" class="form-control" id="id_describe" name="describe" value="{{job.describe}}" readonly/>
+				</div>
+
+				<div class="form-group">
+					 <label for="exampleInputText">详细地址</label><input type="text" class="form-control" id="id_address" name="address" value="{{province.province}}，{{city.city}}，{{district.district}}，{{job.address}}"  readonly/>
+				</div>
+				{% include "baiduMap_job_border.html" %}
+				<div class="form-group">
+					 <label for="exampleInputText">负责人</label><input type="text" class="form-control" id="id_person_in_charge" name="person_in_charge" value="{{job.person_in_charge}}" readonly/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">开始时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_start_time" name="start_time" size="16" type="text" value="{{job.start_time|date:"Y-m-d H:i:s"}}" required="required" readonly>
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+				<div class="form-group">
+                	<label for="exampleInputText">最晚结束时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_end_time" name="end_time" size="16" type="text" value="{{job.end_time|date:"Y-m-d H:i:s"}}" required="required" readonly>
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+	//language:  'fr',
+	weekStart: 1,
+	todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+	showMeridian: 1
+});
+</script>
+				<div class="form-group">
+					 <label for="exampleInputText">需求无人机数目</label><input type="text" class="form-control" id="id_uav_need" name="uav_need" value="{{job.uav_need}}" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required" readonly/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">已选无人机数目</label><input type="text" class="form-control" id="id_uav_selected" name="uav_selected" value="{{job.uav_selected}}" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required" readonly/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">每台无人机报酬(元)</label><input type="text" class="form-control" id="id_each_pay" name="each_pay" value="{{job.each_pay}}" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required" readonly/>
+				</div>
+    			
+                <button type="submit"   id="id_button_submit" name="button_submit" class="btn btn-primary" style="display:none;">提交</button>
+			</form>
+			</div>
+	</div>
+</div>
+{% endblock %}

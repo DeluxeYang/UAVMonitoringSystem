@@ -1,0 +1,92 @@
+<script src="/static/js/stream.js"></script>
+<script src="/static/js/shapefile.js"></script>
+<script src="/static/js/dbf.js"></script>
+
+<label for="exampleInputText">请注意：目前仅支持shapefile只包含一个边界</label>
+</br>
+<label for="exampleInputText">.shp文件上传 </label><input class="form-control" id="shp" type="file" name="shp" />
+<label for="exampleInputText">.dbf文件上传 </label><input class="form-control" id="dbf" type="file" name="dbf" />
+<label for="exampleInputText">.shx文件上传 </label><input class="form-control" id="shx" type="file" name="shx" />
+</br>
+<div id="mapDiv"  style="height:550px;border:#ccc solid 1px;display:none;"></div>
+<script src="/static/ajax/frontend/baiduAPI.js" type="text/javascript"></script><!-- 地图初始化 -->
+<script type="text/javascript">
+BMap.Point.prototype.longitude = 0
+BMap.Point.prototype.latitude = 0
+BMap.Point.prototype.set_ll = function(lng,lat){
+    this.longitude = lng;
+    this.latitude = lat;
+}
+
+function initMap(){
+    createMap();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+}
+
+var shapefile_load = function(e) {
+    var shpFile = document.getElementById('shp').files[0];
+    var dbfFile = document.getElementById('dbf').files[0];
+    if (shpFile) {
+        var opts = { shp: shpFile };
+      	if (dbfFile) {
+            opts['dbf'] = dbfFile;
+        }
+        shapefile = new Shapefile(opts, function(data){
+            document.getElementById('mapDiv').style.display = "block";
+
+            var points = [];
+            for (var i = 0; i < data.records[0].numPoints-1; i++){
+                var p1 = data.records[0].points[i].x;
+                var p2 = data.records[0].points[i].y;
+                points.push(new BMap.Point(p1,p2));
+            };
+
+            var convertor = new BMap.Convertor();
+            convertor.translate(points, 1, 5, translateCallback)//百度坐标转换！！！
+        });
+    }
+}
+
+translateCallback = function (data){
+    console.log(data)
+    if(data.status === 0) {
+        var points = [];
+        for (var i = 0; i < data.points.length; i++) {
+            points.push(data.points[i]);
+        }
+        var polygon = new BMap.Polygon(points);
+        map.addOverlay(polygon);
+
+        var viewport = map.getViewport(points);
+        console.log(viewport)
+        if(viewport.zoom < 10){
+            console.log("Error")
+            setTimeout(shapefile_load,200)
+        }
+        map.centerAndZoom(viewport.center,viewport.zoom-1);
+        trans_json(data);
+    }
+}
+
+function trans_json(data) 
+{
+    var json_obj = {
+            username: "{{self.username}}",
+            datas: []
+            };    //JSON对象 
+    //for (var j = 0; j < data.records.length; j++)
+        //if( json_obj.datas[j] == null)
+            //json_obj.datas[j] = [];
+    for (var i = 0; i < data.points.length; i++){
+        json_obj.datas.push({lng:data.points[i].lng ,lat:data.points[i].lat });
+    };
+    var json_str = JSON.stringify(json_obj);    //将JSON对象转变成JSON格式的字符串
+    document.getElementById("id_json").value=json_str;
+    console.log(json_obj);
+}
+
+document.getElementById('shp').addEventListener('change',shapefile_load, false);
+document.getElementById('dbf').addEventListener('change',shapefile_load, false);
+initMap();
+</script>

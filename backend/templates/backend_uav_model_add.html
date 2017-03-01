@@ -1,0 +1,113 @@
+
+{% extends "backend_base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "backend_uav_model_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+			<ul class="nav nav-pills">
+				<li class="active">
+					 <a>无人机型号 添加</a>
+				</li>
+			</ul>
+			<form role="form" method="post" id="uav_model_add_form"  enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-group">
+					 <label for="exampleInputText">型号编号</label>
+					 <input type="text" class="form-control" id="id_uav_model" name="uav_model" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">名称</label>
+					 <input type="text" class="form-control" id="id_name" name="name"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">功能类型</label>
+					 <input type="text" class="form-control" id="id_function_type" name="function_type"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">产品编号</label>
+					 <input type="text" class="form-control" id="id_serial_number" name="serial_number"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">公司</label>
+					 <input type="text" class="form-control" id="id_company" name="company"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">产地</label>
+					 <input type="text" class="form-control" id="id_origin_place" name="origin_place"/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">设计日期</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="2015-01-01" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_design_date" name="design_date" size="16" type="text" value="" >
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+	//language:  'fr',
+	weekStart: 1,
+	todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+	showMeridian: 1
+});
+</script>
+				<div class="form-group">
+					 <label for="exampleInputText">自重(克)</label><input type="text" class="form-control" id="id_weight" name="weight" placeholder="整数" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">载重(克)</label><input type="text" class="form-control" id="id_load_weight" name="load_weight"  placeholder="整数" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">对角线距离(米)</label><input type="text" class="form-control" id="id_diagonal_distance" name="diagonal_distance" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">螺旋桨数目</label><input type="text" class="form-control" id="id_propeller_num" name="propeller_num"  placeholder="整数" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大上升速度(米/秒)</label><input type="text" class="form-control" id="id_max_rise" name="max_rise" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大下降速度(米/秒)</label><input type="text" class="form-control" id="id_max_decline" name="max_decline" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大水平速度(米/秒)</label><input type="text" class="form-control" id="id_max_speed" name="max_speed" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大飞行高度(米)</label><input type="text" class="form-control" id="id_max_height" name="max_height" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大倾斜角(度)</label><input type="text" class="form-control" id="id_max_angle" name="max_angle" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">悬停垂直精度(米)</label><input type="text" class="form-control" id="id_precision_v" name="precision_v" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">悬停水平精度(米)</label><input type="text" class="form-control" id="id_precision_h" name="precision_h" placeholder="浮点数" onkeypress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">GPS模式</label><input type="text" class="form-control" id="id_GPS_mode" name="GPS_mode"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">信号模式</label><input type="text" class="form-control" id="id_signal_mode" name="signal_mode"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">其他</label>
+					 <input type="text" class="form-control" id="id_other" name="other"/>
+				</div>
+				<p class="form-actions">
+				<input type="submit" value="确认" class="btn btn-primary">
+				</p>
+			</form>
+	</div>
+</div>
+ 
+{% endblock %}

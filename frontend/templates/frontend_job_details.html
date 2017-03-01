@@ -1,0 +1,180 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					作业详情
+				</h3>
+			</div>
+			<div class="panel-body">
+    		<form role="form" method="post" id="job_edit_form">
+    			{% csrf_token %}
+    			<div class="form-group">
+					 <label for="exampleInputText">作业流水号</label><input type="text" class="form-control" value="{{job.number}}" id="id_number" name="number" readonly />
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">作业类型</label>	<input type="text" class="form-control" value="{{job.job_type}}" id="id_job_type" name="job_type" readonly />	
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">农业类型</label>	<input type="text" class="form-control" value="{{job.farm_type}}" id="id_farm_type" name="farm_type" readonly />
+				</div>
+				<div class="form-group" >
+					<label for="exampleInputText">作业状态</label>
+					<input type="text" class="form-control" value="{% ifequal job.status 0  %}未开始{% endifequal %}{% ifequal job.status 1 %}进行中{% endifequal %}{% ifequal job.status 2 %}已完成{% endifequal %}"
+					id="id_farm_type" name="farm_type" readonly />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业描述</label>
+					 <input type="text" class="form-control" id="id_describe" name="describe" value="{{job.describe}}" readonly/>
+				</div>
+				
+				<div class="form-group">
+					 <label for="exampleInputText">详细地址</label><input type="text" class="form-control" id="id_address" name="address" value="{{province.province}}，{{city.city}}，{{district.district}}，{{job.address}}"  readonly/>
+				</div>
+{% include "baiduMap_job_border.html" %}
+
+				
+
+
+				<div class="form-group" id="id_border_file_D">
+					 <label for="exampleInputText">边界文件</label><input type="text" class="form-control" value="{{job.border_file|default:""}}" readonly />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">边界文件描述</label>
+					 <input type="text" class="form-control" id="id_border_describe" name="border_describe" value="{{job.border_describe|default:"" }}" readonly/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">负责人</label><input type="text" class="form-control" id="id_person_in_charge" name="person_in_charge" value="{{job.person_in_charge}}" readonly/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">开始时间</label>
+                    <input class="form-control" id="id_start_time" name="start_time" type="text" value="{{job.start_time|date:"Y-m-d H:i:s"}}" readonly>
+            	</div>
+				<div class="form-group">
+                	<label for="exampleInputText">最晚结束时间</label>
+                    <input class="form-control" id="id_end_time" name="end_time" type="text" value="{{job.end_time|date:"Y-m-d H:i:s"}}" readonly>
+            	</div>
+				<div class="form-group">
+					 <label for="exampleInputText">需求无人机数目</label><input type="text" class="form-control" id="id_uav_need" name="uav_need" value="{{job.uav_need}}" readonly/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">已选无人机数目</label><input type="text" class="form-control" id="id_uav_selected" name="uav_selected" value="{{job.uav_selected}}" readonly/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">每台无人机报酬(元)</label><input type="text" class="form-control" id="id_each_pay" name="each_pay" value="{{job.each_pay}}" readonly/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+	<div class="col-md-3 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					选择我的无人机
+				</h3>
+			</div>
+			<div class="panel-body">
+			<form role="form" method="post" id="uav_select_form">
+			{% csrf_token %}
+				<div class="form-group" >
+					<label for="exampleInputText">我的无人机</label>
+					<select class="form-control" id="id_uav" name="uav" onchange="SelectOnChange(this.options.selectedIndex)">
+						<option value ="">------</option>
+						{% for u in uav %}
+						<option value="{{u.id}}" uav_id_code="{{u.uav_id_code}}" uav_model="{{u.uav_model.uav_model}}" uav_name="{{u.uav_model.name}}" serial_number="{{u.uav_model.serial_number}}" function_type="{{u.uav_model.function_type}}" weight="{{u.uav_model.weight}}" load_weight="{{u.uav_model.load_weight}}" diagonal_distance="{{u.uav_model.diagonal_distance}}" propeller_num="{{u.uav_model.propeller_num}}" max_speed="{{u.uav_model.max_speed}}">{{u.uav_id_code}}</option>
+						{% endfor %}
+					</select>
+				</div>
+<script type="text/javascript">
+function SelectOnChange(s) 
+{
+	var uav_detail = document.getElementById("id_uav_detail");
+	if(s!=0)
+	{
+		uav_detail.style.display = "block";
+
+		var uav_id_code = document.getElementById("id_uav_id_code");
+		var uav_model = document.getElementById("id_uav_model");
+		var name = document.getElementById("id_name");
+		var serial_number = document.getElementById("id_serial_number");
+		var function_type = document.getElementById("id_function_type");
+		var weight = document.getElementById("id_weight");
+		var load_weight = document.getElementById("id_load_weight");
+		var diagonal_distance = document.getElementById("id_diagonal_distance");
+		var propeller_num = document.getElementById("id_propeller_num");
+		var max_speed = document.getElementById("id_max_speed");
+		
+		var uav = document.getElementById("id_uav");
+	    uav_id_code.value = uav.options[s].getAttribute("uav_id_code");
+	    uav_model.value = uav.options[s].getAttribute("uav_model");
+		name.value = uav.options[s].getAttribute("uav_name");
+		serial_number.value = uav.options[s].getAttribute("serial_number");
+		function_type.value = uav.options[s].getAttribute("function_type");
+		weight.value = uav.options[s].getAttribute("weight");
+		load_weight.value = uav.options[s].getAttribute("load_weight");
+		diagonal_distance.value = uav.options[s].getAttribute("diagonal_distance");
+		propeller_num.value = uav.options[s].getAttribute("propeller_num");
+		max_speed.value = uav.options[s].getAttribute("max_speed");
+	}
+	else
+	{
+		uav_detail.style.display = "none";
+	}
+} 
+</script>
+				<button type="submit" id="id_button_submit" name="button_submit" class="btn btn-primary">申请</button>
+			</form>
+			<br>
+			<div id="id_uav_detail" style="display:none;">
+				<form role="form" method="post" id="uav_form">
+					<div class="form-group">
+						<label for="exampleInputText">无人机编号</label>
+						<input id="id_uav_id_code" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputText">所属型号</label>
+						<input id="id_uav_model" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputText">型号名称</label>
+						<input id="id_name" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputText">型号编号</label>
+						<input id="id_serial_number" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputText">功能</label>
+						<input id="id_function_type" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputText">重量</label>
+						<input id="id_weight" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputText">载重</label>
+						<input id="id_load_weight" value="" class="form-control"/>
+					</div>
+					<div class="form-group">
+					 <label for="exampleInputText">对角线距离(米)</label><input type="text" class="form-control" id="id_diagonal_distance" name="diagonal_distance" value="" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">螺旋桨数目</label><input type="text" class="form-control" id="id_propeller_num" name="propeller_num" value="" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大水平速度(米/秒)</label><input type="text" class="form-control" id="id_max_speed" name="max_speed" value="" />
+				</div>
+
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+{% endblock %}

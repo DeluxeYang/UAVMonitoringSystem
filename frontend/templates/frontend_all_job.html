@@ -1,0 +1,104 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-12 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<a href="/alljob/">全网作业(共{{count}}条)</a>
+				</h3>
+				<form role="form" method="post" id="filter" id="form1">
+				{% csrf_token %}
+					<div class="form-inline">
+						<div class="distpicker">
+							<br>
+							<div class="form-group">
+								<label class="sr-only" for="id_province">Province</label>
+								<select class="form-control" id="id_province" name="province" onchange="form = document.getElementById('form1');s1 = document.getElementById('id_city');s1.options[0].selected = true;s2 = document.getElementById('id_district');s2.options[0].selected = true;form.submit();">
+								</select>
+							</div>
+							<div class="form-group">
+								<label class="sr-only" for="id_city">City</label>
+								<select class="form-control" id="id_city" name="city" onchange="form = document.getElementById('form1');s2 = document.getElementById('id_district');s2.options[0].selected = true;form.submit();"></select>
+							</div>
+							<div class="form-group">
+								<label class="sr-only" for="id_district">District</label>
+								<select class="form-control" id="id_district" name="district" onchange="form = document.getElementById('form1');form.submit();"></select>
+							</div>
+						
+						<div class="form-group">
+							<label >开始时间排序</label>
+							<select class="form-control" id="id_start_time_order" name="start_time_order">
+								<option value="{{order}}">{{order}}</option>
+								{% if order == '逆序' %}
+								<option value="正序">正序</option>
+								{% elif order == '正序' %}
+								<option value="逆序">逆序</option>
+								{% endif %}
+							</select>
+						</div>
+						<input type="submit" value="筛选" class="button pull-right" />
+						</div>
+					</div>
+					<script type="text/javascript">
+						$(".distpicker").distpicker({
+							autoSelect: false,
+							province: '{{province_L.province}}',
+  							city: '{{city_L.city}}',
+  							district: '{{district_L.district}}'
+						});
+					</script>
+				</form>
+
+
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>作业流水号</th>
+							<th>所属用户</th>
+							<th>作业状态</th>
+							<th>作物类型</th>
+							<th>作业类型</th>
+							<th>地点</th>
+							<th>开始时间</th>
+							<th>价格</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for u in job %}
+						<tr class="{% ifequal u.status 0  %}info{% endifequal %}{% ifequal u.status 1  %}warning{% endifequal %}{% ifequal u.status 2  %}success{% endifequal %}">
+							<td>{{u.number}}</a></td>
+							<td>{{u.user.username}}</td>
+							{% ifequal u.status 0  %}
+								<td>未开始</td>
+							{% endifequal %}
+							{% ifequal u.status 1 %}
+								<td>进行中</td>
+							{% endifequal %}
+							<td>{{u.farm_type}}</td>
+							<td>{{u.job_type}}</td>
+							<td>{{u.nation}}</td>
+							<td>{{u.start_time|date:"Y-m-d H:i:s"}}</td>
+							<td>{{u.each_pay}}</td>
+							<td>
+								<a href="jobdetails/?job={{u.id}}">详情</a>
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				<h3 class="panel-title">
+					全网未开始、进行中作业列表
+				</h3>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

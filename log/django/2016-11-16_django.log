@@ -1,0 +1,1084 @@
+ERROR 2016-11-16 14:24:31,026 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-11-16 14:24:31,026 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-11-16 14:24:33,884 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-11-16 14:24:33,884 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-11-16 14:24:37,268 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-11-16 14:24:37,268 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+WARNING 2016-11-16 16:33:44,173 Not Found: /favicon.ico
+WARNING 2016-11-16 16:33:44,173 Not Found: /favicon.ico
+WARNING 2016-11-16 17:04:18,409 Not Found: /scrape.php
+WARNING 2016-11-16 17:04:18,409 Not Found: /scrape.php
+WARNING 2016-11-16 17:04:39,037 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,037 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,038 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,039 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,037 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,037 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,038 Not Found: /announce.php
+WARNING 2016-11-16 17:04:39,039 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,303 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,304 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,304 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,303 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,305 Not Found: /scrape.php
+WARNING 2016-11-16 17:05:08,304 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,304 Not Found: /announce.php
+WARNING 2016-11-16 17:05:08,305 Not Found: /scrape.php
+WARNING 2016-11-16 17:05:18,149 Not Found: /announce.php
+WARNING 2016-11-16 17:05:18,149 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,123 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,124 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,125 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,126 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,123 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,124 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,125 Not Found: /announce.php
+WARNING 2016-11-16 17:06:07,126 Not Found: /announce.php
+WARNING 2016-11-16 17:06:10,136 Not Found: /announce.php
+WARNING 2016-11-16 17:06:10,137 Not Found: /announce.php
+WARNING 2016-11-16 17:06:10,136 Not Found: /announce.php
+WARNING 2016-11-16 17:06:10,137 Not Found: /announce.php
+WARNING 2016-11-16 17:06:19,126 Not Found: /announce.php
+WARNING 2016-11-16 17:06:19,126 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,159 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,160 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,161 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,159 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,162 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,160 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,161 Not Found: /announce.php
+WARNING 2016-11-16 17:08:28,162 Not Found: /announce.php
+WARNING 2016-11-16 17:08:37,175 Not Found: /announce.php
+WARNING 2016-11-16 17:08:37,175 Not Found: /announce.php
+WARNING 2016-11-16 17:08:49,149 Not Found: /announce.php
+WARNING 2016-11-16 17:08:49,149 Not Found: /announce.php
+WARNING 2016-11-16 17:08:58,170 Not Found: /announce.php
+WARNING 2016-11-16 17:08:58,170 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,129 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,130 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,131 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,132 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,131 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,130 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,129 Not Found: /announce.php
+WARNING 2016-11-16 17:10:49,132 Not Found: /announce.php
+WARNING 2016-11-16 17:10:58,174 Not Found: /announce.php
+WARNING 2016-11-16 17:10:58,174 Not Found: /announce.php
+WARNING 2016-11-16 17:11:07,162 Not Found: /announce.php
+WARNING 2016-11-16 17:11:07,162 Not Found: /announce.php
+WARNING 2016-11-16 17:11:19,124 Not Found: /announce.php
+WARNING 2016-11-16 17:11:19,124 Not Found: /announce.php
+WARNING 2016-11-16 17:13:07,153 Not Found: /announce.php
+WARNING 2016-11-16 17:13:07,155 Not Found: /announce.php
+WARNING 2016-11-16 17:13:07,156 Not Found: /announce.php
+WARNING 2016-11-16 17:13:07,153 Not Found: /announce.php
+WARNING 2016-11-16 17:13:07,155 Not Found: /announce.php
+WARNING 2016-11-16 17:13:07,156 Not Found: /announce.php
+WARNING 2016-11-16 17:13:19,165 Not Found: /announce.php
+WARNING 2016-11-16 17:13:19,166 Not Found: /announce.php
+WARNING 2016-11-16 17:13:19,165 Not Found: /announce.php
+WARNING 2016-11-16 17:13:19,166 Not Found: /announce.php
+WARNING 2016-11-16 17:13:28,147 Not Found: /announce.php
+WARNING 2016-11-16 17:13:28,147 Not Found: /announce.php
+WARNING 2016-11-16 17:13:37,163 Not Found: /announce.php
+WARNING 2016-11-16 17:13:37,163 Not Found: /announce.php
+WARNING 2016-11-16 17:15:28,167 Not Found: /announce.php
+WARNING 2016-11-16 17:15:28,167 Not Found: /announce.php
+WARNING 2016-11-16 17:34:07,503 Not Found: /announce.php
+WARNING 2016-11-16 17:34:07,504 Not Found: /announce.php
+WARNING 2016-11-16 17:34:07,505 Not Found: /announce.php
+WARNING 2016-11-16 17:34:07,503 Not Found: /announce.php
+WARNING 2016-11-16 17:34:07,504 Not Found: /announce.php
+WARNING 2016-11-16 17:34:07,505 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,167 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,168 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,169 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,170 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,167 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,168 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,169 Not Found: /announce.php
+WARNING 2016-11-16 17:34:10,170 Not Found: /announce.php
+WARNING 2016-11-16 17:35:21,163 Not Found: /announce.php
+WARNING 2016-11-16 17:35:21,163 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,153 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,154 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,155 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,156 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,153 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,154 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,155 Not Found: /announce.php
+WARNING 2016-11-16 17:36:10,156 Not Found: /announce.php
+WARNING 2016-11-16 17:36:13,158 Not Found: /announce.php
+WARNING 2016-11-16 17:36:13,158 Not Found: /announce.php
+WARNING 2016-11-16 17:36:13,164 Not Found: /announce.php
+WARNING 2016-11-16 17:36:13,164 Not Found: /announce.php
+WARNING 2016-11-16 17:36:22,176 Not Found: /announce.php
+WARNING 2016-11-16 17:36:22,176 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,154 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,155 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,154 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,155 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,163 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,163 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,179 Not Found: /announce.php
+WARNING 2016-11-16 17:38:31,179 Not Found: /announce.php
+WARNING 2016-11-16 17:38:40,180 Not Found: /announce.php
+WARNING 2016-11-16 17:38:40,180 Not Found: /announce.php
+WARNING 2016-11-16 17:38:52,155 Not Found: /announce.php
+WARNING 2016-11-16 17:38:52,155 Not Found: /announce.php
+WARNING 2016-11-16 17:39:01,172 Not Found: /announce.php
+WARNING 2016-11-16 17:39:01,172 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,152 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,153 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,154 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,155 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,152 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,155 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,154 Not Found: /announce.php
+WARNING 2016-11-16 17:40:52,153 Not Found: /announce.php
+WARNING 2016-11-16 17:41:01,171 Not Found: /announce.php
+WARNING 2016-11-16 17:41:01,171 Not Found: /announce.php
+WARNING 2016-11-16 17:41:10,161 Not Found: /announce.php
+WARNING 2016-11-16 17:41:10,161 Not Found: /announce.php
+WARNING 2016-11-16 17:41:22,155 Not Found: /announce.php
+WARNING 2016-11-16 17:41:22,155 Not Found: /announce.php
+WARNING 2016-11-16 17:43:10,170 Not Found: /announce.php
+WARNING 2016-11-16 17:43:10,170 Not Found: /announce.php
+WARNING 2016-11-16 17:43:10,171 Not Found: /announce.php
+WARNING 2016-11-16 17:43:10,171 Not Found: /announce.php
+WARNING 2016-11-16 17:43:10,172 Not Found: /announce.php
+WARNING 2016-11-16 17:43:10,172 Not Found: /announce.php
+WARNING 2016-11-16 17:43:22,179 Not Found: /announce.php
+WARNING 2016-11-16 17:43:22,179 Not Found: /announce.php
+WARNING 2016-11-16 17:43:22,185 Not Found: /announce.php
+WARNING 2016-11-16 17:43:22,185 Not Found: /announce.php
+WARNING 2016-11-16 17:43:31,155 Not Found: /announce.php
+WARNING 2016-11-16 17:43:31,155 Not Found: /announce.php
+WARNING 2016-11-16 17:43:40,159 Not Found: /announce.php
+WARNING 2016-11-16 17:43:40,159 Not Found: /announce.php
+WARNING 2016-11-16 17:45:31,178 Not Found: /announce.php
+WARNING 2016-11-16 17:45:31,178 Not Found: /announce.php
+WARNING 2016-11-16 18:04:10,133 Not Found: /announce.php
+WARNING 2016-11-16 18:04:10,149 Not Found: /announce.php
+WARNING 2016-11-16 18:04:10,151 Not Found: /announce.php
+WARNING 2016-11-16 18:04:10,133 Not Found: /announce.php
+WARNING 2016-11-16 18:04:10,149 Not Found: /announce.php
+WARNING 2016-11-16 18:04:10,151 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,127 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,128 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,128 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,127 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,129 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,128 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,128 Not Found: /announce.php
+WARNING 2016-11-16 18:04:13,129 Not Found: /announce.php
+WARNING 2016-11-16 18:05:24,188 Not Found: /announce.php
+WARNING 2016-11-16 18:05:24,188 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,143 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,144 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,145 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,146 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,143 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,144 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,145 Not Found: /announce.php
+WARNING 2016-11-16 18:06:13,146 Not Found: /announce.php
+WARNING 2016-11-16 18:06:16,152 Not Found: /announce.php
+WARNING 2016-11-16 18:06:16,153 Not Found: /announce.php
+WARNING 2016-11-16 18:06:16,152 Not Found: /announce.php
+WARNING 2016-11-16 18:06:16,153 Not Found: /announce.php
+WARNING 2016-11-16 18:06:25,167 Not Found: /announce.php
+WARNING 2016-11-16 18:06:25,167 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,168 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,168 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,169 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,169 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,179 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,180 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,179 Not Found: /announce.php
+WARNING 2016-11-16 18:08:34,180 Not Found: /announce.php
+WARNING 2016-11-16 18:08:43,147 Not Found: /announce.php
+WARNING 2016-11-16 18:08:43,147 Not Found: /announce.php
+WARNING 2016-11-16 18:08:55,151 Not Found: /announce.php
+WARNING 2016-11-16 18:08:55,151 Not Found: /announce.php
+WARNING 2016-11-16 18:09:04,146 Not Found: /announce.php
+WARNING 2016-11-16 18:09:04,146 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,147 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,148 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,148 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,150 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,150 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,149 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,147 Not Found: /announce.php
+WARNING 2016-11-16 18:10:55,149 Not Found: /announce.php
+WARNING 2016-11-16 18:11:04,147 Not Found: /announce.php
+WARNING 2016-11-16 18:11:04,147 Not Found: /announce.php
+WARNING 2016-11-16 18:11:13,141 Not Found: /announce.php
+WARNING 2016-11-16 18:11:13,141 Not Found: /announce.php
+WARNING 2016-11-16 18:11:25,154 Not Found: /announce.php
+WARNING 2016-11-16 18:11:25,154 Not Found: /announce.php
+WARNING 2016-11-16 18:13:13,162 Not Found: /announce.php
+WARNING 2016-11-16 18:13:13,163 Not Found: /announce.php
+WARNING 2016-11-16 18:13:13,164 Not Found: /announce.php
+WARNING 2016-11-16 18:13:13,162 Not Found: /announce.php
+WARNING 2016-11-16 18:13:13,163 Not Found: /announce.php
+WARNING 2016-11-16 18:13:13,164 Not Found: /announce.php
+WARNING 2016-11-16 18:13:25,150 Not Found: /announce.php
+WARNING 2016-11-16 18:13:25,151 Not Found: /announce.php
+WARNING 2016-11-16 18:13:25,150 Not Found: /announce.php
+WARNING 2016-11-16 18:13:25,151 Not Found: /announce.php
+WARNING 2016-11-16 18:13:34,152 Not Found: /announce.php
+WARNING 2016-11-16 18:13:34,152 Not Found: /announce.php
+WARNING 2016-11-16 18:13:43,150 Not Found: /announce.php
+WARNING 2016-11-16 18:13:43,150 Not Found: /announce.php
+WARNING 2016-11-16 18:15:34,174 Not Found: /announce.php
+WARNING 2016-11-16 18:15:34,174 Not Found: /announce.php
+WARNING 2016-11-16 20:33:01,618 Not Found: /scrape.php
+WARNING 2016-11-16 20:33:01,620 Not Found: /scrape.php
+WARNING 2016-11-16 20:33:01,618 Not Found: /scrape.php
+WARNING 2016-11-16 20:33:01,620 Not Found: /scrape.php
+WARNING 2016-11-16 20:33:09,525 Not Found: /announce.php
+WARNING 2016-11-16 20:33:09,526 Not Found: /announce.php
+WARNING 2016-11-16 20:33:09,527 Not Found: /announce.php
+WARNING 2016-11-16 20:33:09,525 Not Found: /announce.php
+WARNING 2016-11-16 20:33:09,526 Not Found: /announce.php
+WARNING 2016-11-16 20:33:09,527 Not Found: /announce.php
+WARNING 2016-11-16 20:33:12,510 Not Found: /announce.php
+WARNING 2016-11-16 20:33:12,511 Not Found: /announce.php
+WARNING 2016-11-16 20:33:12,511 Not Found: /announce.php
+WARNING 2016-11-16 20:33:12,510 Not Found: /announce.php
+WARNING 2016-11-16 20:33:12,511 Not Found: /announce.php
+WARNING 2016-11-16 20:33:12,511 Not Found: /announce.php
+WARNING 2016-11-16 20:33:13,507 Not Found: /announce.php
+WARNING 2016-11-16 20:33:13,507 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,490 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,491 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,492 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,493 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,490 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,491 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,492 Not Found: /announce.php
+WARNING 2016-11-16 20:35:15,493 Not Found: /announce.php
+WARNING 2016-11-16 20:35:24,492 Not Found: /announce.php
+WARNING 2016-11-16 20:35:24,492 Not Found: /announce.php
+WARNING 2016-11-16 20:37:03,485 Not Found: /announce.php
+WARNING 2016-11-16 20:37:03,485 Not Found: /announce.php
+WARNING 2016-11-16 20:37:33,505 Not Found: /announce.php
+WARNING 2016-11-16 20:37:33,505 Not Found: /announce.php
+WARNING 2016-11-16 20:37:33,512 Not Found: /announce.php
+WARNING 2016-11-16 20:37:33,512 Not Found: /announce.php
+WARNING 2016-11-16 20:37:45,486 Not Found: /announce.php
+WARNING 2016-11-16 20:37:45,486 Not Found: /announce.php
+WARNING 2016-11-16 20:39:24,463 Not Found: /announce.php
+WARNING 2016-11-16 20:39:24,463 Not Found: /announce.php
+WARNING 2016-11-16 20:39:54,480 Not Found: /announce.php
+WARNING 2016-11-16 20:39:54,480 Not Found: /announce.php
+WARNING 2016-11-16 20:39:54,486 Not Found: /announce.php
+WARNING 2016-11-16 20:39:54,487 Not Found: /announce.php
+WARNING 2016-11-16 20:39:54,486 Not Found: /announce.php
+WARNING 2016-11-16 20:39:54,487 Not Found: /announce.php
+WARNING 2016-11-16 20:41:45,493 Not Found: /announce.php
+WARNING 2016-11-16 20:41:45,493 Not Found: /announce.php
+WARNING 2016-11-16 20:42:15,463 Not Found: /announce.php
+WARNING 2016-11-16 20:42:15,464 Not Found: /announce.php
+WARNING 2016-11-16 20:42:15,463 Not Found: /announce.php
+WARNING 2016-11-16 20:42:15,464 Not Found: /announce.php
+WARNING 2016-11-16 20:43:45,493 Not Found: /announce.php
+WARNING 2016-11-16 20:43:45,493 Not Found: /announce.php
+WARNING 2016-11-16 20:44:15,503 Not Found: /announce.php
+WARNING 2016-11-16 20:44:15,503 Not Found: /announce.php
+WARNING 2016-11-16 20:44:24,473 Not Found: /announce.php
+WARNING 2016-11-16 20:44:24,473 Not Found: /announce.php
+WARNING 2016-11-16 20:44:33,481 Not Found: /announce.php
+WARNING 2016-11-16 20:44:33,481 Not Found: /announce.php
+WARNING 2016-11-16 20:44:33,487 Not Found: /announce.php
+WARNING 2016-11-16 20:44:33,487 Not Found: /announce.php
+WARNING 2016-11-16 20:46:03,476 Not Found: /announce.php
+WARNING 2016-11-16 20:46:03,476 Not Found: /announce.php
+WARNING 2016-11-16 20:46:33,482 Not Found: /announce.php
+WARNING 2016-11-16 20:46:33,482 Not Found: /announce.php
+WARNING 2016-11-16 20:46:45,469 Not Found: /announce.php
+WARNING 2016-11-16 20:46:45,469 Not Found: /announce.php
+WARNING 2016-11-16 20:46:54,485 Not Found: /announce.php
+WARNING 2016-11-16 20:46:54,485 Not Found: /announce.php
+WARNING 2016-11-16 20:49:15,487 Not Found: /announce.php
+WARNING 2016-11-16 20:49:15,487 Not Found: /announce.php
+WARNING 2016-11-16 20:50:33,463 Not Found: /announce.php
+WARNING 2016-11-16 20:50:33,463 Not Found: /announce.php
+WARNING 2016-11-16 20:50:45,485 Not Found: /announce.php
+WARNING 2016-11-16 20:50:45,485 Not Found: /announce.php
+WARNING 2016-11-16 20:53:03,484 Not Found: /announce.php
+WARNING 2016-11-16 20:53:03,484 Not Found: /announce.php
+WARNING 2016-11-16 20:54:03,472 Not Found: /announce.php
+WARNING 2016-11-16 20:54:03,472 Not Found: /announce.php
+WARNING 2016-11-16 20:54:15,495 Not Found: /announce.php
+WARNING 2016-11-16 20:54:15,495 Not Found: /announce.php
+WARNING 2016-11-16 21:03:12,488 Not Found: /announce.php
+WARNING 2016-11-16 21:03:12,489 Not Found: /announce.php
+WARNING 2016-11-16 21:03:12,488 Not Found: /announce.php
+WARNING 2016-11-16 21:03:12,490 Not Found: /announce.php
+WARNING 2016-11-16 21:03:12,489 Not Found: /announce.php
+WARNING 2016-11-16 21:03:12,490 Not Found: /announce.php
+WARNING 2016-11-16 21:03:15,478 Not Found: /announce.php
+WARNING 2016-11-16 21:03:15,479 Not Found: /announce.php
+WARNING 2016-11-16 21:03:15,480 Not Found: /announce.php
+WARNING 2016-11-16 21:03:15,480 Not Found: /announce.php
+WARNING 2016-11-16 21:03:15,479 Not Found: /announce.php
+WARNING 2016-11-16 21:03:15,478 Not Found: /announce.php
+WARNING 2016-11-16 21:03:16,463 Not Found: /announce.php
+WARNING 2016-11-16 21:03:16,463 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,502 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,502 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,503 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,509 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,503 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,512 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,512 Not Found: /announce.php
+WARNING 2016-11-16 21:05:18,509 Not Found: /announce.php
+WARNING 2016-11-16 21:05:27,480 Not Found: /announce.php
+WARNING 2016-11-16 21:05:27,480 Not Found: /announce.php
+WARNING 2016-11-16 21:07:06,468 Not Found: /announce.php
+WARNING 2016-11-16 21:07:06,468 Not Found: /announce.php
+WARNING 2016-11-16 21:07:36,485 Not Found: /announce.php
+WARNING 2016-11-16 21:07:36,485 Not Found: /announce.php
+WARNING 2016-11-16 21:07:36,486 Not Found: /announce.php
+WARNING 2016-11-16 21:07:36,486 Not Found: /announce.php
+WARNING 2016-11-16 21:07:48,492 Not Found: /announce.php
+WARNING 2016-11-16 21:07:48,492 Not Found: /announce.php
+WARNING 2016-11-16 21:09:27,491 Not Found: /announce.php
+WARNING 2016-11-16 21:09:27,491 Not Found: /announce.php
+WARNING 2016-11-16 21:09:57,499 Not Found: /announce.php
+WARNING 2016-11-16 21:09:57,500 Not Found: /announce.php
+WARNING 2016-11-16 21:09:57,500 Not Found: /announce.php
+WARNING 2016-11-16 21:09:57,499 Not Found: /announce.php
+WARNING 2016-11-16 21:09:57,510 Not Found: /announce.php
+WARNING 2016-11-16 21:09:57,510 Not Found: /announce.php
+WARNING 2016-11-16 21:11:48,500 Not Found: /announce.php
+WARNING 2016-11-16 21:11:48,500 Not Found: /announce.php
+WARNING 2016-11-16 21:12:18,475 Not Found: /announce.php
+WARNING 2016-11-16 21:12:18,476 Not Found: /announce.php
+WARNING 2016-11-16 21:12:18,475 Not Found: /announce.php
+WARNING 2016-11-16 21:12:18,476 Not Found: /announce.php
+WARNING 2016-11-16 21:13:48,479 Not Found: /announce.php
+WARNING 2016-11-16 21:13:48,479 Not Found: /announce.php
+WARNING 2016-11-16 21:14:18,468 Not Found: /announce.php
+WARNING 2016-11-16 21:14:18,468 Not Found: /announce.php
+WARNING 2016-11-16 21:14:27,467 Not Found: /announce.php
+WARNING 2016-11-16 21:14:27,467 Not Found: /announce.php
+WARNING 2016-11-16 21:14:36,477 Not Found: /announce.php
+WARNING 2016-11-16 21:14:36,478 Not Found: /announce.php
+WARNING 2016-11-16 21:14:36,478 Not Found: /announce.php
+WARNING 2016-11-16 21:14:36,477 Not Found: /announce.php
+WARNING 2016-11-16 21:16:06,463 Not Found: /announce.php
+WARNING 2016-11-16 21:16:06,463 Not Found: /announce.php
+WARNING 2016-11-16 21:16:36,473 Not Found: /announce.php
+WARNING 2016-11-16 21:16:36,473 Not Found: /announce.php
+WARNING 2016-11-16 21:16:48,464 Not Found: /announce.php
+WARNING 2016-11-16 21:16:48,464 Not Found: /announce.php
+WARNING 2016-11-16 21:16:57,461 Not Found: /announce.php
+WARNING 2016-11-16 21:16:57,461 Not Found: /announce.php
+WARNING 2016-11-16 21:19:18,471 Not Found: /announce.php
+WARNING 2016-11-16 21:19:18,471 Not Found: /announce.php
+WARNING 2016-11-16 21:20:36,457 Not Found: /announce.php
+WARNING 2016-11-16 21:20:36,457 Not Found: /announce.php
+WARNING 2016-11-16 21:20:48,471 Not Found: /announce.php
+WARNING 2016-11-16 21:20:48,471 Not Found: /announce.php
+WARNING 2016-11-16 21:23:06,471 Not Found: /announce.php
+WARNING 2016-11-16 21:23:06,471 Not Found: /announce.php
+WARNING 2016-11-16 21:24:06,466 Not Found: /announce.php
+WARNING 2016-11-16 21:24:06,466 Not Found: /announce.php
+WARNING 2016-11-16 21:24:18,468 Not Found: /announce.php
+WARNING 2016-11-16 21:24:18,468 Not Found: /announce.php
+WARNING 2016-11-16 21:33:15,505 Not Found: /announce.php
+WARNING 2016-11-16 21:33:15,506 Not Found: /announce.php
+WARNING 2016-11-16 21:33:15,507 Not Found: /announce.php
+WARNING 2016-11-16 21:33:15,505 Not Found: /announce.php
+WARNING 2016-11-16 21:33:15,506 Not Found: /announce.php
+WARNING 2016-11-16 21:33:15,507 Not Found: /announce.php
+WARNING 2016-11-16 21:33:18,462 Not Found: /announce.php
+WARNING 2016-11-16 21:33:18,463 Not Found: /announce.php
+WARNING 2016-11-16 21:33:18,465 Not Found: /announce.php
+WARNING 2016-11-16 21:33:18,462 Not Found: /announce.php
+WARNING 2016-11-16 21:33:18,463 Not Found: /announce.php
+WARNING 2016-11-16 21:33:18,465 Not Found: /announce.php
+WARNING 2016-11-16 21:33:19,459 Not Found: /announce.php
+WARNING 2016-11-16 21:33:19,459 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,469 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,469 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,470 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,471 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,472 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,470 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,471 Not Found: /announce.php
+WARNING 2016-11-16 21:35:21,472 Not Found: /announce.php
+WARNING 2016-11-16 21:35:30,475 Not Found: /announce.php
+WARNING 2016-11-16 21:35:30,475 Not Found: /announce.php
+WARNING 2016-11-16 21:37:09,463 Not Found: /announce.php
+WARNING 2016-11-16 21:37:09,463 Not Found: /announce.php
+WARNING 2016-11-16 21:37:39,479 Not Found: /announce.php
+WARNING 2016-11-16 21:37:39,480 Not Found: /announce.php
+WARNING 2016-11-16 21:37:39,479 Not Found: /announce.php
+WARNING 2016-11-16 21:37:39,480 Not Found: /announce.php
+WARNING 2016-11-16 21:37:51,461 Not Found: /announce.php
+WARNING 2016-11-16 21:37:51,461 Not Found: /announce.php
+WARNING 2016-11-16 21:39:30,458 Not Found: /announce.php
+WARNING 2016-11-16 21:39:30,458 Not Found: /announce.php
+WARNING 2016-11-16 21:40:00,458 Not Found: /announce.php
+WARNING 2016-11-16 21:40:00,459 Not Found: /announce.php
+WARNING 2016-11-16 21:40:00,460 Not Found: /announce.php
+WARNING 2016-11-16 21:40:00,458 Not Found: /announce.php
+WARNING 2016-11-16 21:40:00,459 Not Found: /announce.php
+WARNING 2016-11-16 21:40:00,460 Not Found: /announce.php
+WARNING 2016-11-16 21:41:51,475 Not Found: /announce.php
+WARNING 2016-11-16 21:41:51,475 Not Found: /announce.php
+WARNING 2016-11-16 21:42:21,486 Not Found: /announce.php
+WARNING 2016-11-16 21:42:21,488 Not Found: /announce.php
+WARNING 2016-11-16 21:42:21,486 Not Found: /announce.php
+WARNING 2016-11-16 21:42:21,488 Not Found: /announce.php
+WARNING 2016-11-16 21:43:51,475 Not Found: /announce.php
+WARNING 2016-11-16 21:43:51,475 Not Found: /announce.php
+WARNING 2016-11-16 21:44:21,468 Not Found: /announce.php
+WARNING 2016-11-16 21:44:21,468 Not Found: /announce.php
+WARNING 2016-11-16 21:44:30,483 Not Found: /announce.php
+WARNING 2016-11-16 21:44:30,483 Not Found: /announce.php
+WARNING 2016-11-16 21:44:39,462 Not Found: /announce.php
+WARNING 2016-11-16 21:44:39,464 Not Found: /announce.php
+WARNING 2016-11-16 21:44:39,462 Not Found: /announce.php
+WARNING 2016-11-16 21:44:39,464 Not Found: /announce.php
+WARNING 2016-11-16 21:46:09,476 Not Found: /announce.php
+WARNING 2016-11-16 21:46:09,476 Not Found: /announce.php
+WARNING 2016-11-16 21:46:39,499 Not Found: /announce.php
+WARNING 2016-11-16 21:46:39,499 Not Found: /announce.php
+WARNING 2016-11-16 21:46:51,470 Not Found: /announce.php
+WARNING 2016-11-16 21:46:51,470 Not Found: /announce.php
+WARNING 2016-11-16 21:47:00,479 Not Found: /announce.php
+WARNING 2016-11-16 21:47:00,479 Not Found: /announce.php
+WARNING 2016-11-16 21:49:21,474 Not Found: /announce.php
+WARNING 2016-11-16 21:49:21,474 Not Found: /announce.php
+WARNING 2016-11-16 21:50:39,474 Not Found: /announce.php
+WARNING 2016-11-16 21:50:39,474 Not Found: /announce.php
+WARNING 2016-11-16 21:50:51,470 Not Found: /announce.php
+WARNING 2016-11-16 21:50:51,470 Not Found: /announce.php
+WARNING 2016-11-16 21:53:09,470 Not Found: /announce.php
+WARNING 2016-11-16 21:53:09,470 Not Found: /announce.php
+WARNING 2016-11-16 21:54:09,513 Not Found: /announce.php
+WARNING 2016-11-16 21:54:09,513 Not Found: /announce.php
+WARNING 2016-11-16 21:54:21,461 Not Found: /announce.php
+WARNING 2016-11-16 21:54:21,461 Not Found: /announce.php
+WARNING 2016-11-16 21:57:16,479 Not Found: /announce.php
+WARNING 2016-11-16 21:57:16,479 Not Found: /announce.php
+WARNING 2016-11-16 22:03:18,737 Not Found: /announce.php
+WARNING 2016-11-16 22:03:18,738 Not Found: /announce.php
+WARNING 2016-11-16 22:03:18,739 Not Found: /announce.php
+WARNING 2016-11-16 22:03:18,737 Not Found: /announce.php
+WARNING 2016-11-16 22:03:18,738 Not Found: /announce.php
+WARNING 2016-11-16 22:03:18,739 Not Found: /announce.php
+WARNING 2016-11-16 22:03:21,482 Not Found: /announce.php
+WARNING 2016-11-16 22:03:21,483 Not Found: /announce.php
+WARNING 2016-11-16 22:03:21,484 Not Found: /announce.php
+WARNING 2016-11-16 22:03:21,482 Not Found: /announce.php
+WARNING 2016-11-16 22:03:21,483 Not Found: /announce.php
+WARNING 2016-11-16 22:03:21,484 Not Found: /announce.php
+WARNING 2016-11-16 22:03:22,473 Not Found: /announce.php
+WARNING 2016-11-16 22:03:22,473 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,474 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,476 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,477 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,474 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,479 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,476 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,477 Not Found: /announce.php
+WARNING 2016-11-16 22:05:24,479 Not Found: /announce.php
+WARNING 2016-11-16 22:05:33,466 Not Found: /announce.php
+WARNING 2016-11-16 22:05:33,466 Not Found: /announce.php
+WARNING 2016-11-16 22:07:12,483 Not Found: /announce.php
+WARNING 2016-11-16 22:07:12,483 Not Found: /announce.php
+WARNING 2016-11-16 22:07:42,468 Not Found: /announce.php
+WARNING 2016-11-16 22:07:42,469 Not Found: /announce.php
+WARNING 2016-11-16 22:07:42,468 Not Found: /announce.php
+WARNING 2016-11-16 22:07:42,469 Not Found: /announce.php
+WARNING 2016-11-16 22:07:54,455 Not Found: /announce.php
+WARNING 2016-11-16 22:07:54,455 Not Found: /announce.php
+WARNING 2016-11-16 22:09:33,513 Not Found: /announce.php
+WARNING 2016-11-16 22:09:33,513 Not Found: /announce.php
+WARNING 2016-11-16 22:10:03,470 Not Found: /announce.php
+WARNING 2016-11-16 22:10:03,471 Not Found: /announce.php
+WARNING 2016-11-16 22:10:03,471 Not Found: /announce.php
+WARNING 2016-11-16 22:10:03,470 Not Found: /announce.php
+WARNING 2016-11-16 22:10:03,471 Not Found: /announce.php
+WARNING 2016-11-16 22:10:03,471 Not Found: /announce.php
+WARNING 2016-11-16 22:11:54,463 Not Found: /announce.php
+WARNING 2016-11-16 22:11:54,463 Not Found: /announce.php
+WARNING 2016-11-16 22:12:24,465 Not Found: /announce.php
+WARNING 2016-11-16 22:12:24,465 Not Found: /announce.php
+WARNING 2016-11-16 22:12:24,465 Not Found: /announce.php
+WARNING 2016-11-16 22:12:24,465 Not Found: /announce.php
+WARNING 2016-11-16 22:13:54,459 Not Found: /announce.php
+WARNING 2016-11-16 22:13:54,459 Not Found: /announce.php
+WARNING 2016-11-16 22:14:24,457 Not Found: /announce.php
+WARNING 2016-11-16 22:14:24,457 Not Found: /announce.php
+WARNING 2016-11-16 22:14:33,459 Not Found: /announce.php
+WARNING 2016-11-16 22:14:33,459 Not Found: /announce.php
+WARNING 2016-11-16 22:14:42,460 Not Found: /announce.php
+WARNING 2016-11-16 22:14:42,461 Not Found: /announce.php
+WARNING 2016-11-16 22:14:42,460 Not Found: /announce.php
+WARNING 2016-11-16 22:14:42,461 Not Found: /announce.php
+WARNING 2016-11-16 22:16:12,477 Not Found: /announce.php
+WARNING 2016-11-16 22:16:12,477 Not Found: /announce.php
+WARNING 2016-11-16 22:16:42,460 Not Found: /announce.php
+WARNING 2016-11-16 22:16:42,460 Not Found: /announce.php
+WARNING 2016-11-16 22:16:54,496 Not Found: /announce.php
+WARNING 2016-11-16 22:16:54,496 Not Found: /announce.php
+WARNING 2016-11-16 22:17:03,457 Not Found: /announce.php
+WARNING 2016-11-16 22:17:03,457 Not Found: /announce.php
+WARNING 2016-11-16 22:20:42,465 Not Found: /announce.php
+WARNING 2016-11-16 22:20:42,465 Not Found: /announce.php
+WARNING 2016-11-16 22:20:54,464 Not Found: /announce.php
+WARNING 2016-11-16 22:20:54,464 Not Found: /announce.php
+WARNING 2016-11-16 22:23:12,490 Not Found: /announce.php
+WARNING 2016-11-16 22:23:12,490 Not Found: /announce.php
+WARNING 2016-11-16 22:24:12,477 Not Found: /announce.php
+WARNING 2016-11-16 22:24:12,477 Not Found: /announce.php
+WARNING 2016-11-16 22:24:24,488 Not Found: /announce.php
+WARNING 2016-11-16 22:24:24,488 Not Found: /announce.php
+WARNING 2016-11-16 22:27:19,467 Not Found: /announce.php
+WARNING 2016-11-16 22:27:19,467 Not Found: /announce.php
+WARNING 2016-11-16 22:33:21,638 Not Found: /announce.php
+WARNING 2016-11-16 22:33:21,640 Not Found: /announce.php
+WARNING 2016-11-16 22:33:21,642 Not Found: /announce.php
+WARNING 2016-11-16 22:33:21,638 Not Found: /announce.php
+WARNING 2016-11-16 22:33:21,640 Not Found: /announce.php
+WARNING 2016-11-16 22:33:21,642 Not Found: /announce.php
+WARNING 2016-11-16 22:33:25,467 Not Found: /announce.php
+WARNING 2016-11-16 22:33:25,467 Not Found: /announce.php
+WARNING 2016-11-16 22:33:27,468 Not Found: /announce.php
+WARNING 2016-11-16 22:33:27,471 Not Found: /announce.php
+WARNING 2016-11-16 22:33:27,474 Not Found: /announce.php
+WARNING 2016-11-16 22:33:27,468 Not Found: /announce.php
+WARNING 2016-11-16 22:33:27,471 Not Found: /announce.php
+WARNING 2016-11-16 22:33:27,474 Not Found: /announce.php
+WARNING 2016-11-16 22:35:27,491 Not Found: /announce.php
+WARNING 2016-11-16 22:35:27,493 Not Found: /announce.php
+WARNING 2016-11-16 22:35:27,495 Not Found: /announce.php
+WARNING 2016-11-16 22:35:27,491 Not Found: /announce.php
+WARNING 2016-11-16 22:35:27,493 Not Found: /announce.php
+WARNING 2016-11-16 22:35:27,495 Not Found: /announce.php
+WARNING 2016-11-16 22:35:36,459 Not Found: /announce.php
+WARNING 2016-11-16 22:35:36,459 Not Found: /announce.php
+WARNING 2016-11-16 22:37:15,475 Not Found: /announce.php
+WARNING 2016-11-16 22:37:15,475 Not Found: /announce.php
+WARNING 2016-11-16 22:37:45,471 Not Found: /announce.php
+WARNING 2016-11-16 22:37:45,473 Not Found: /announce.php
+WARNING 2016-11-16 22:37:45,471 Not Found: /announce.php
+WARNING 2016-11-16 22:37:45,473 Not Found: /announce.php
+WARNING 2016-11-16 22:37:57,517 Not Found: /announce.php
+WARNING 2016-11-16 22:37:57,517 Not Found: /announce.php

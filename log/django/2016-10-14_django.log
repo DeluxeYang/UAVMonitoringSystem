@@ -1,0 +1,142 @@
+WARNING 2016-10-14 16:21:27,914 Not Found: /favicon.ico
+WARNING 2016-10-14 16:21:27,914 Not Found: /favicon.ico
+WARNING 2016-10-14 16:23:42,812 Not Found: /favicon.ico
+WARNING 2016-10-14 16:23:42,812 Not Found: /favicon.ico
+ERROR 2016-10-14 16:28:20,207 Internal Server Error: /test/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\common\views\test.py", line 29, in test
+    ip = getIPFromDJangoRequest(request)
+TypeError: getIPFromDJangoRequest() missing 1 required positional argument: 'request'
+ERROR 2016-10-14 16:28:20,207 Internal Server Error: /test/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\common\views\test.py", line 29, in test
+    ip = getIPFromDJangoRequest(request)
+TypeError: getIPFromDJangoRequest() missing 1 required positional argument: 'request'
+ERROR 2016-10-14 16:28:45,084 Internal Server Error: /test/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\common\views\test.py", line 29, in test
+    ip = getIPFromDJangoRequest(self,request)
+NameError: name 'self' is not defined
+ERROR 2016-10-14 16:28:45,084 Internal Server Error: /test/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\uav\common\views\test.py", line 29, in test
+    ip = getIPFromDJangoRequest(self,request)
+NameError: name 'self' is not defined
+WARNING 2016-10-14 16:29:36,700 Not Found: /announce.php
+WARNING 2016-10-14 16:29:36,703 Not Found: /announce.php
+WARNING 2016-10-14 16:29:36,700 Not Found: /announce.php
+WARNING 2016-10-14 16:29:36,703 Not Found: /announce.php
+WARNING 2016-10-14 16:29:45,693 Not Found: /announce.php
+WARNING 2016-10-14 16:29:45,694 Not Found: /announce.php
+WARNING 2016-10-14 16:29:45,693 Not Found: /announce.php
+WARNING 2016-10-14 16:29:45,694 Not Found: /announce.php
+WARNING 2016-10-14 16:29:50,670 Not Found: /announce.php
+WARNING 2016-10-14 16:29:50,670 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,707 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,710 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,713 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,707 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,715 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,710 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,713 Not Found: /announce.php
+WARNING 2016-10-14 16:31:42,715 Not Found: /announce.php
+WARNING 2016-10-14 16:31:45,676 Not Found: /announce.php
+WARNING 2016-10-14 16:31:45,679 Not Found: /announce.php
+WARNING 2016-10-14 16:31:45,676 Not Found: /announce.php
+WARNING 2016-10-14 16:31:45,679 Not Found: /announce.php
+WARNING 2016-10-14 16:31:48,666 Not Found: /announce.php
+WARNING 2016-10-14 16:31:48,666 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,662 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,664 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,665 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,667 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,662 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,664 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,665 Not Found: /announce.php
+WARNING 2016-10-14 16:34:03,667 Not Found: /announce.php
+WARNING 2016-10-14 16:34:09,696 Not Found: /announce.php
+WARNING 2016-10-14 16:34:09,699 Not Found: /announce.php
+WARNING 2016-10-14 16:34:09,701 Not Found: /announce.php
+WARNING 2016-10-14 16:34:09,696 Not Found: /announce.php
+WARNING 2016-10-14 16:34:09,699 Not Found: /announce.php
+WARNING 2016-10-14 16:34:09,701 Not Found: /announce.php
+WARNING 2016-10-14 16:36:09,670 Not Found: /announce.php
+WARNING 2016-10-14 16:36:09,670 Not Found: /announce.php
+WARNING 2016-10-14 16:36:09,670 Not Found: /announce.php
+WARNING 2016-10-14 16:36:09,670 Not Found: /announce.php
+WARNING 2016-10-14 16:36:15,684 Not Found: /announce.php
+WARNING 2016-10-14 16:36:15,686 Not Found: /announce.php
+WARNING 2016-10-14 16:36:15,684 Not Found: /announce.php
+WARNING 2016-10-14 16:36:15,686 Not Found: /announce.php
+WARNING 2016-10-14 16:36:21,650 Not Found: /announce.php
+WARNING 2016-10-14 16:36:21,650 Not Found: /announce.php
+WARNING 2016-10-14 16:38:18,666 Not Found: /announce.php
+WARNING 2016-10-14 16:38:18,666 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,652 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,654 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,656 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,659 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,652 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,654 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,656 Not Found: /announce.php
+WARNING 2016-10-14 16:38:30,659 Not Found: /announce.php
+WARNING 2016-10-14 16:38:33,676 Not Found: /announce.php
+WARNING 2016-10-14 16:38:33,676 Not Found: /announce.php
+ERROR 2016-10-14 16:52:40,157 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\common\views\login.py", line 46, in login
+    +'{ID:'+str(myuser.id)+',IP:'+IP+'}')
+NameError: name 'myuser' is not defined
+ERROR 2016-10-14 16:52:40,157 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\common\views\login.py", line 46, in login
+    +'{ID:'+str(myuser.id)+',IP:'+IP+'}')
+NameError: name 'myuser' is not defined
+WARNING 2016-10-14 16:59:39,685 Not Found: /announce.php
+WARNING 2016-10-14 16:59:39,685 Not Found: /announce.php
+WARNING 2016-10-14 16:59:39,691 Not Found: /announce.php
+WARNING 2016-10-14 16:59:39,691 Not Found: /announce.php
+WARNING 2016-10-14 16:59:48,692 Not Found: /announce.php
+WARNING 2016-10-14 16:59:48,692 Not Found: /announce.php
+WARNING 2016-10-14 16:59:48,692 Not Found: /announce.php
+WARNING 2016-10-14 16:59:48,692 Not Found: /announce.php
+WARNING 2016-10-14 16:59:53,644 Not Found: /announce.php
+WARNING 2016-10-14 16:59:53,644 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,698 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,701 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,703 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,705 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,698 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,701 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,703 Not Found: /announce.php
+WARNING 2016-10-14 17:01:45,705 Not Found: /announce.php
+WARNING 2016-10-14 17:01:48,663 Not Found: /announce.php
+WARNING 2016-10-14 17:01:48,663 Not Found: /announce.php
+WARNING 2016-10-14 17:01:48,663 Not Found: /announce.php
+WARNING 2016-10-14 17:01:48,663 Not Found: /announce.php
+WARNING 2016-10-14 17:01:51,678 Not Found: /announce.php
+WARNING 2016-10-14 17:01:51,678 Not Found: /announce.php

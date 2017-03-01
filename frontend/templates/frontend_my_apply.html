@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "profile_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					我的申请
+				</h3>
+			</div>
+			<div class="panel-body">
+    		<form role="form" method="post" id="job_edit_form" enctype="multipart/form-data">
+    			{% csrf_token %}
+    			<table class="table">
+					<thead>
+						<tr>
+							<th>无人机编号</th>
+							<th>作业流水号</th>
+							<th>确认状态</th>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for u in jobdetail %}
+						<tr class="{% if u.confirm  %}success{% else %}info{% endif %}">
+							<td><a href="/uavdetail/?uav={{u.uav.id}}">{{u.uav.uav_id_code}}</a></td>
+							<td><a href="/alljob/jobdetails/?job={{u.job.id}}">{{u.job.number}}</a></td>
+							{% if u.confirm  %}
+								<td>已确认</td>
+							{% else %}
+								<td>申请中</td>
+							{% endif %}
+							<td>{{u.job.start_time|date:"Y-m-d H:i:s"}}</td>
+							<td>{{u.job.end_time|date:"Y-m-d H:i:s"}}</td>
+							{% if u.confirm  %}
+								<td>无</td>
+							{% else %}
+								<td>
+									<a href="/alljob/jobcancel/?jobdetail={{u.id}}" onclick="return confirm('确认取消申请？')">取消申请</a>
+								</td>
+							{% endif %}
+							
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</form>
+			</div>
+	</div>
+</div>
+{% endblock %}

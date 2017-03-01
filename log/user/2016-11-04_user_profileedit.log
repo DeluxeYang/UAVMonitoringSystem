@@ -1,0 +1,35 @@
+INFO 2016-11-04 14:31:49,367 frontend.views.profile.frontend_profile_edit, Deluxe, Changed Profile Success, The Origianl are {ID:1,email:421826500@qq.com,headshot:user/headshot/p1509328416.jpg,address:清华东路17号中国农业大学东校区,nation:110108,phone:18810517357,describe:管理员}
+INFO 2016-11-04 14:38:32,400 frontend.views.profile.frontend_profile_edit, Deluxe, ID:1, Changed Profile Fail.'MyUser' object has no attribute 'saeve'
+INFO 2016-11-04 14:42:20,829 frontend.views.profile.frontend_profile_edit, Deluxe, ID:1, Changed Profile Fail.(<class 'AttributeError'>, AttributeError("'MyUser' object has no attribute 'saeve'",), <traceback object at 0x0000000004E26A88>)
+INFO 2016-11-04 14:45:51,437 frontend.views.profile.frontend_profile_edit, Deluxe, ID:1, Changed Profile Fail.traceback.format_exc():
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\profile\frontend_profile_edit.py", line 43, in frontend_profile_edit
+    myuser.saeve()
+  File "C:\Python34\lib\site-packages\django\utils\functional.py", line 227, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'MyUser' object has no attribute 'saeve'
+
+INFO 2016-11-04 14:46:38,926 frontend.views.profile.frontend_profile_edit, Deluxe, ID:1, Changed Profile Fail.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\profile\frontend_profile_edit.py", line 43, in frontend_profile_edit
+    myuser.saeve()
+  File "C:\Python34\lib\site-packages\django\utils\functional.py", line 227, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'MyUser' object has no attribute 'saeve'
+
+INFO 2016-11-04 14:47:13,307 frontend.views.profile.frontend_profile_edit, Deluxe, ID:1, Changed Profile Fail.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\profile\frontend_profile_edit.py", line 43, in frontend_profile_edit
+    myuser.saeve()
+  File "C:\Python34\lib\site-packages\django\utils\functional.py", line 227, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'MyUser' object has no attribute 'saeve'
+
+INFO 2016-11-04 14:47:54,493 frontend.views.profile.frontend_profile_edit, Deluxe, {ID:1}, Changed Profile Fail.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\profile\frontend_profile_edit.py", line 43, in frontend_profile_edit
+    myuser.saeve()
+  File "C:\Python34\lib\site-packages\django\utils\functional.py", line 227, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'MyUser' object has no attribute 'saeve'
+

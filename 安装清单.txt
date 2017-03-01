@@ -1,0 +1,25 @@
+python3.4.3
+django1.8.1
+
+pip
+easyinstall
+
+pillow（图片处理）
+pymysql(C:\Python34\Lib\site-packages\django\db\backends\mysql 下的base.py / introspection.py中的mysqldb全部换为pymysql）
+
+celery
+djcelery
+erlang
+rabbitMQ
+
+
+Djangorestframework
+
+
+pyinstall（转exe）
+pywin32
+
+rtree (pip install rtree ,依赖libspatialindex，将软件包中的\libspatialindex\bin\中的3个文件和放到windows目录下的system32中，然后把\libspatialindex文件夹放到D盘根目录，然后pip)
+
+**************(C:\Python34\Lib\site-packages\rtree-0.8.2-py3.4.egg\rtree,下的index.py，199行
+f = basename + "." + self.properties.idx_extension.decode('utf-8')

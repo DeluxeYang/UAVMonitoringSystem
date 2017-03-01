@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "profile_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					该无人机{{uav.uav_id_code}}的已申请的作业
+				</h3>
+			</div>
+			<div class="panel-body">
+    		<form role="form" method="post" id="job_edit_form" enctype="multipart/form-data">
+    			{% csrf_token %}
+    			<table class="table">
+					<thead>
+						<tr>
+							<th>无人机编号</th>
+							<th>作业流水号</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for u in job_list %}
+						<tr class="success">
+							<td>
+								<a href="/uavdetail/?uav={{uav.id}}">{{uav.uav_id_code}}</a>
+							</td>
+							<td>
+								<a href="/alljob/jobdetails/?job={{u.id}}">{{u.number}}</a>
+							</td>
+							<td>
+								<a href="/uavjobselect/?job={{u.id}}&uav={{uav.id}}" onclick="return confirm('选择执行该作业？')">选择执行该作业</a>
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</form>
+			</div>
+	</div>
+</div>
+{% endblock %}

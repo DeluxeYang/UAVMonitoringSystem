@@ -1,0 +1,69 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "backend_job_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+        	<ul class="nav nav-pills">
+				<li class="active">
+					 <a> 无人机飞行 详情</a>
+				</li>
+			</ul>
+    		<form role="form" method="post" id="job_form">
+    			{% csrf_token %}
+				<div class="form-group">
+					 <label for="exampleInputEmail1">作业流水号</label>
+					 <input type="text" class="form-control" value="{{job_detail.job.number}}" readonly id="id_number" name="number"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">无人机编号</label>
+					 <input type="text" class="form-control" value=
+					 "{{job_detail.uav.uav_id_code}}" readonly id="id_uav_id_code" name="uav_id_code"/>
+				</div>
+			</form>
+			<table class="table table-hover table-bordered table-condensed">
+				<thead>
+					<tr>
+						<th>时间</th>
+						<th>经度</th>
+						<th>纬度</th>
+						<th>高度</th>
+					</tr>
+				</thead>
+				<tbody>
+					 {% for u in job_desc %}
+					 <tr class="info">
+					 	<td>{{u.time|date:"Y-m-d H:i:s"}}</td>
+					 	<td>{{u.longitude}}</td>
+					 	<td>{{u.latitude}}</td>
+					 	<td>{{u.height}}</td>
+					 </tr>
+					 {% endfor %}
+				</tbody>
+			</table>
+			<table class="table table-hover table-bordered table-condensed">
+				<thead>
+					<tr>
+						<th>时间</th>
+						<th>经度</th>
+						<th>纬度</th>
+						<th>高度</th>
+					</tr>
+				</thead>
+				<tbody>
+					 {% for u in textlinelist %}
+					 <tr class="info">
+					 	{% for i in u%}
+					 	<td>{{i}}</td>
+					 	{% endfor %}
+					 </tr>
+					 {% endfor %}
+				</tbody>
+			</table>
+	</div>
+</div>
+{% endblock %}

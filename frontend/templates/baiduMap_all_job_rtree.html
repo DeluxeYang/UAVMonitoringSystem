@@ -1,0 +1,192 @@
+<div id="mapDiv_create"  style="height:550px;border:#ccc solid 1px;">
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=upTvjM7vTHHlXckl6gxFkndl"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+<!--加载检索信息窗口-->
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+    }
+
+    var overlays_th = 0;
+    var overlays = [];
+    opts = {
+        strokeColor:"red",    //边线颜色。
+        fillColor:"red",      //填充颜色。当参数为空时，圆形将没有填充效果。
+        strokeWeight: 3,       //边线的宽度，以像素为单位。
+        strokeOpacity: 0.8,    //边线透明度，取值范围0 - 1。
+        fillOpacity: 0.6,      //填充的透明度，取值范围0 - 1。
+        strokeStyle: 'solid' //边线的样式，solid或dashed。
+    }
+    //创建地图函数：
+    function createMap(){
+        var map_create = new BMap.Map("mapDiv_create");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.404, 39.915);//定义一个中心点坐标
+        map_create.centerAndZoom(point,11);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map_create = map_create;//将map变量存储在全局
+
+        
+        var overlaycomplete = function(e){
+            for(var i = 0; i < overlays.length; i++){
+                map_create.removeOverlay(overlays[i]);
+            }
+            overlays.push(e.overlay);
+            tran_json(e.overlay);
+        };
+
+        //实例化鼠标绘制工具
+        var drawingManager = new BMapLib.DrawingManager(map_create, {
+            isOpen: false, //是否开启绘制模式
+            enableDrawingTool: true, //是否显示工具栏
+            drawingToolOptions: {
+                anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+                offset: new BMap.Size(5, 5), //偏离值
+                drawingModes: [
+                    BMAP_DRAWING_RECTANGLE,
+                ]
+            },
+        });  
+
+        //添加鼠标绘制工具监听事件，用于获取绘制结果
+        drawingManager.addEventListener('overlaycomplete', overlaycomplete);
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map_create.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map_create.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map_create.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map_create.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map_create.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+        map_create.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map_create.addControl(ctrl_sca);
+
+        var opts = {offset: new BMap.Size(5, 80)} 
+        map_create.addControl(new BMap.MapTypeControl(opts));
+    }
+    
+    
+    initMap();//创建和初始化地图
+
+
+	function tran_json(o) 
+	{
+		var json_obj = {
+				username: "{{self.username}}",
+                datas:[]
+				};    //JSON对象
+		for (var i = 0; i < o.getPath().length; i++) {
+			json_obj.datas.push({lng:o.getPath()[i].lng,lat:o.getPath()[i].lat});
+		};
+		var json_str = get_bounds_rtree(json_obj); 
+        rtree_ajax(json_str);
+	}
+
+    function get_bounds_rtree(o)
+    {
+        var json_obj = {
+                lng_max:0,
+                lng_min:180,
+                lat_max:0,
+                lat_min:90
+                };    //JSON对象
+        for(var i=0; i<o.datas.length;i++)
+        {
+            if(o.datas[i].lng > json_obj.lng_max)
+                json_obj.lng_max = o.datas[i].lng;
+            if(o.datas[i].lng < json_obj.lng_min)
+                json_obj.lng_min = o.datas[i].lng;
+            if(o.datas[i].lat > json_obj.lat_max)
+                json_obj.lat_max = o.datas[i].lat;
+            if(o.datas[i].lat < json_obj.lat_min)
+                json_obj.lat_min = o.datas[i].lat;
+        }
+        return JSON.stringify(json_obj); 
+    }
+
+    function rtree_ajax(data)
+    {
+        $(function(){
+            $.ajax({
+                type:"GET",
+                url:"/frontend/all_job_rtree_ajax/",
+                data:{data:data},
+                dataType:"json",
+                success: function(data){ 
+                    if(data.length > 0){
+                        tab_delete();
+                        tab_show(data);
+                        border_show(data)
+                    }else{            
+                        var ta=document.getElementById("job_details"); 
+                        ta.style= "display:none";
+                        tab_delete();
+                    }
+                }
+            });
+        });
+    }
+
+    function border_show(data)
+    {
+        for (var i = 0; i < data.length; i++) {
+            var points = [];
+            for (var j = 0; j < data[i].job_border_length; j++) {
+                points.push(new BMap.Point(data[i].job_border[j].lng,data[i].job_border[j].lat));
+            }
+            var polygon = new BMap.Polygon(points,opts);
+            map_create.addOverlay(polygon);
+            overlays.push(polygon)
+        }
+    }
+
+    function tab_show(data)
+    {
+        var ta=document.getElementById("job_details"); //获得表格
+        var tab=document.getElementById("tab"); //获得表格
+        ta.style= "display:block";
+        var colsNum=tab.rows.item(0).cells.length;//列数
+        var rowsnum=document.getElementById("tab").rows.length;//行数
+        for(var j = 0;j < data.length;j++){
+            tab.insertRow(rowsnum+j);
+            for(var i=0;i<colsNum; i++){
+                tab.rows[rowsnum+j].insertCell(i);//插入列
+            }
+            tab.rows[rowsnum+j].cells[0].innerHTML=data[j].number;
+            tab.rows[rowsnum+j].cells[1].innerHTML=data[j].username;
+            if(data[j].status)
+                tab.rows[rowsnum+j].cells[2].innerHTML='进行中';
+            else
+                tab.rows[rowsnum+j].cells[2].innerHTML='未开始';
+            tab.rows[rowsnum+j].cells[3].innerHTML=data[j].farm_type;
+            tab.rows[rowsnum+j].cells[4].innerHTML=data[j].job_type;
+            tab.rows[rowsnum+j].cells[5].innerHTML=data[j].nation;
+            tab.rows[rowsnum+j].cells[6].innerHTML=data[j].start_time.substring(0,10)+'  '+data[j].start_time.substring(11,19);
+            tab.rows[rowsnum+j].cells[7].innerHTML=data[j].each_pay;
+            tab.rows[rowsnum+j].cells[8].innerHTML='<a href="/alljob/jobdetails/?job='+data[j].id+'" target="_blank">详情</a>';
+        }
+    }
+    function tab_delete()
+    {
+        var tab=document.getElementById("tab"); //获得表格
+        var rowsnum=document.getElementById("tab").rows.length;//行数
+        for(var j = rowsnum-1;j >0;j--){
+            tab.deleteRow(j);
+        }
+    }
+</script>

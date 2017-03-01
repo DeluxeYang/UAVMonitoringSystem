@@ -1,0 +1,34 @@
+<div class="distpicker" id="id_nation">
+	<div class="form-inline">
+		<label id="job_area">作业所在地</label><br>
+		<div class="form-group">
+			<label class="sr-only" for="id_province">Province</label>
+			<select class="form-control" id="id_province" name="province">
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="id_city">City</label>
+			<select class="form-control" id="id_city" name="city"></select>
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="id_district">District</label>
+			<select class="form-control" id="id_district" name="district"></select>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(".distpicker").distpicker({
+	province: "",
+	city: "",
+	district: ""
+});
+$(function(){
+	$("select").click(function(){
+		var obj=document.getElementById("id_city");    
+		var index=obj.selectedIndex;   
+		var ci=obj.options[index].getAttribute("address"); 
+		map_create.setCenter(ci);
+		console.log(ci);
+	})
+})
+</script>

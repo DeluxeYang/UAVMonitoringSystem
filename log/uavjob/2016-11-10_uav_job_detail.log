@@ -1,0 +1,15 @@
+INFO 2016-11-10 16:33:24,631 
+frontend.views.job.frontend_uav_job_detail,Deluxe, Check the UAVJOB **CONFIRM** Detail Successed.{ID:1,uav_id:4,job_id:1,uav_job_detail_id:5}
+INFO 2016-11-10 16:33:32,601 
+frontend.views.job.frontend_uav_job_detail,Deluxe, Check the UAVJOB **CONFIRM** Detail Successed.{ID:1,uav_id:4,job_id:1,uav_job_detail_id:5}
+ERROR 2016-11-10 16:33:39,398 
+frontend.views.job.frontend_uav_job_detail,Deluxe, UAVJOB Detail Failed. {ID:1,uav_job_detail_id:56}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail.py", line 27, in frontend_uav_job_detail
+    job_detail = UAV_Job_Detail.objects.get(id=uavjob_id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+

@@ -1,0 +1,35 @@
+
+{% extends "backend_base.html" %}
+
+
+{% block content %}
+
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "backend_user_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+			<ul class="nav nav-pills">
+				<li class="active">
+					 <a> {{usertype}} 添加</a>
+				</li>
+			</ul>
+			<form role="form" method="post" id="user_add_form" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-group" >
+				{% for field in form %}
+      				
+         			{{ field.label_tag }}
+         			{{ field }} 
+         			{{ field.errors }}
+      				
+    			{% endfor %}
+				</div>
+				<p class="form-actions">
+				<input type="submit" value="确认" class="btn btn-primary">
+				</p>
+			</form>
+	</div>
+</div>
+ 
+{% endblock %}

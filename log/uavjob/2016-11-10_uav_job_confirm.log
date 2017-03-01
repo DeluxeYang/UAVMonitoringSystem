@@ -1,0 +1,74 @@
+ERROR 2016-11-10 16:18:50,628 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. {ID:1,uav_job_detail_id:56}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail_confirm.py", line 26, in frontend_uav_job_detail_confirm
+    jobdetail = UAV_Job_Detail.objects.get(id=id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+
+WARNING 2016-11-10 16:19:10,665 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. The job already gets enough uavs.{ID:1,uav_id:4,job_id:1,uav_job_detail_id:5}
+ERROR 2016-11-10 16:19:18,379 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. {ID:1,uav_job_detail_id:56}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail_confirm.py", line 26, in frontend_uav_job_detail_confirm
+    jobdetail = UAV_Job_Detail.objects.get(id=id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+
+ERROR 2016-11-10 16:19:49,284 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. {ID:1,uav_job_detail_id:56}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail_confirm.py", line 26, in frontend_uav_job_detail_confirm
+    jobdetail = UAV_Job_Detail.objects.get(id=id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+
+WARNING 2016-11-10 16:20:05,219 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. The job already gets enough uavs.{ID:1,uav_id:4,job_id:1,uav_job_detail_id:5}
+ERROR 2016-11-10 16:20:13,266 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. {ID:1,uav_job_detail_id:56}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail_confirm.py", line 26, in frontend_uav_job_detail_confirm
+    jobdetail = UAV_Job_Detail.objects.get(id=id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+
+WARNING 2016-11-10 16:22:20,801 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. The job already gets enough uavs.{ID:1,uav_id:4,job_id:1,uav_job_detail_id:5}
+ERROR 2016-11-10 16:22:24,618 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. {ID:1,uav_job_detail_id:500}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail_confirm.py", line 26, in frontend_uav_job_detail_confirm
+    jobdetail = UAV_Job_Detail.objects.get(id=id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+
+WARNING 2016-11-10 16:33:32,578 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. The job already gets enough uavs.{ID:1,uav_id:4,job_id:1,uav_job_detail_id:5}
+ERROR 2016-11-10 16:33:39,147 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Failed. {ID:1,uav_job_detail_id:56}
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\job\frontend_uav_job_detail_confirm.py", line 26, in frontend_uav_job_detail_confirm
+    jobdetail = UAV_Job_Detail.objects.get(id=id)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: UAV_Job_Detail matching query does not exist.
+

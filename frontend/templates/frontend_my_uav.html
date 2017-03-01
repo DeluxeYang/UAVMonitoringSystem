@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "profile_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					无人机详情
+					<a href="/uavregister/"><span class="badge pull-right">注册我的无人机</span></a>
+				</h3>
+			</div>
+			<div class="panel-body">
+			<form class="form" method="POST" action="" id="id_user_manage">
+			{% csrf_token %}
+				<table class="table">
+					<thead>
+						<tr>
+							<th>无人机编号</th>
+							<th>是否激活</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for u in myuav %}
+						<tr class="{%if u.is_active%}info{%else%}warning{%endif%}">
+							<td>{{u.uav_id_code}}</td>
+							{% if u.is_active %}
+							<td>是</td>
+							{% else %}
+							<td>否</td>
+							{% endif %}
+							<td>
+								{%if u.is_active%}
+								<a href="/uavmonitoring/?uav={{u.id}}">实时监控</a>/
+								<a href="/myapply/?uav={{u.id}}">查看申请</a>/
+								{%endif%}
+								<a href="/uavdetail/?uav={{u.id}}">详情</a>
+								<!-- <a href="/uavdelete/?uav={{u.id}}"onclick="return confirm('确认删除？')">注销</a> -->
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</form>
+			</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "profile_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					无人机飞行监视
+				</h3>
+			</div>
+
+			<div class="panel-body">
+					{% include "baiduMap_uav_job.html" %}
+			</div>
+	</div>
+</div>
+{% endblock %}

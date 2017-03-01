@@ -1,0 +1,4 @@
+INFO 2016-12-09 14:32:46,688 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Successed.{ID:1,uav_id:1,job_id:36,uav_job_detail_id:14}
+INFO 2016-12-09 14:35:13,717 
+frontend.views.job.frontend_uav_job_detail_confirm,Deluxe,Confirm a UAVJOB Successed.{ID:1,uav_id:4,job_id:36,uav_job_detail_id:15}

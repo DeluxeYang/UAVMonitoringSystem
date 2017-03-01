@@ -1,0 +1,75 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "profile_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					用户信息
+				</h3>
+			</div>
+			<div class="panel-body">
+			<form role="form" method="post" id="self_edit_form" enctype="multipart/form-data" >
+    			{% csrf_token %}
+				<div class="form-group">
+					 <label for="exampleInputEmail1">Email</label><input type="email" class="form-control" id="exampleInputEmail1" value="{{self.email|default:""}}" id="id_email" name="email"/>
+				</div>
+				<div class="form-group">
+					 <label for="">头像</label>
+					 <input type="file" id="id_headshot" class="form-control" name="headshot" value="{{self.headshot}}"/>
+				</div>
+				{% if self.headshot %}
+					<label for="">已上传头像</label>
+					<img alt="头像"  width="100" class="img-thumbnail" src="{{MEDIA_URL}}{{self.headshot}}" />
+				{% endif %}
+				<div class="distpicker">
+					<div class="form-inline">
+					<label for="">地址</label><br>
+						<div class="form-group">
+							<label class="sr-only" for="id_province">Province</label>
+							<select class="form-control" id="id_province" name="province">
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_city">City</label>
+							<select class="form-control" id="id_city" name="city"></select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_district">District</label>
+							<select class="form-control" id="id_district" name="district"></select>
+						</div>
+						</div>
+				</div>
+				<script type="text/javascript">
+					$(".distpicker").distpicker({
+						province: "{{province.province}}",
+						city: "{{city.city}}",
+						district: "{{district.district}}"
+					});
+				</script>
+				<div class="form-group">
+					 <label>详细地址</label><input type="text" class="form-control" value="{{self.address|default:""}}" id="id_address" name="address"/>
+				</div>
+				<div class="form-group">
+					 <label>电话</label><input type="text" class="form-control" value="{{self.phone|default:""}}" id="id_phone" name="phone"/>
+				</div>
+				<div class="form-group">
+					 <label for="">描述</label><input type="text" class="form-control" value="{{self.describe|default:""}}" id="id_describe" name="describe"/>
+				</div>
+				<button type="submit" class="btn btn-primary">提交</button>
+			</form>
+			</div>
+
+			<div class="panel-footer">
+				
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

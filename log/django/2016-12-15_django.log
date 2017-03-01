@@ -1,0 +1,1086 @@
+ERROR 2016-12-15 17:13:28,123 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:28,123 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:31,600 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:31,600 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:33,150 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:33,150 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:34,352 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:34,352 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:48,817 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:13:48,817 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    messages.warning(request, '数据出错，请联系管理员')
+NameError: name 'messages' is not defined
+WARNING 2016-12-15 17:13:49,181 Not Found: /favicon.ico
+WARNING 2016-12-15 17:13:49,181 Not Found: /favicon.ico
+ERROR 2016-12-15 17:15:45,102 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    ########  LOGGER  ##############
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    +'\n%s' % traceback.format_exc())
+NameError: name 'messages' is not defined
+ERROR 2016-12-15 17:15:45,102 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 436, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 53, in frontend_all_job_rtree_ajax
+    ########  LOGGER  ##############
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 560, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 305, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 457, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 369, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 237, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 741, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 696, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\pyamqp.py", line 116, in establish_connection
+    conn = self.Connection(**opts)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 165, in __init__
+    self.transport = self.Transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\connection.py", line 186, in Transport
+    return create_transport(host, connect_timeout, ssl)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 299, in create_transport
+    return TCPTransport(host, connect_timeout)
+  File "C:\Python34\lib\site-packages\amqp\transport.py", line 95, in __init__
+    raise socket.error(last_err)
+OSError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python34\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 58, in frontend_all_job_rtree_ajax
+    +'\n%s' % traceback.format_exc())
+NameError: name 'messages' is not defined
+WARNING 2016-12-15 17:49:21,342 Not Found: /scrape.php
+WARNING 2016-12-15 17:49:21,342 Not Found: /scrape.php
+WARNING 2016-12-15 17:49:29,065 Not Found: /announce.php
+WARNING 2016-12-15 17:49:29,067 Not Found: /announce.php
+WARNING 2016-12-15 17:49:29,068 Not Found: /announce.php
+WARNING 2016-12-15 17:49:29,065 Not Found: /announce.php
+WARNING 2016-12-15 17:49:29,067 Not Found: /announce.php
+WARNING 2016-12-15 17:49:29,068 Not Found: /announce.php
+WARNING 2016-12-15 17:49:32,057 Not Found: /announce.php
+WARNING 2016-12-15 17:49:32,059 Not Found: /announce.php
+WARNING 2016-12-15 17:49:32,061 Not Found: /announce.php
+WARNING 2016-12-15 17:49:32,057 Not Found: /announce.php
+WARNING 2016-12-15 17:49:32,059 Not Found: /announce.php
+WARNING 2016-12-15 17:49:32,061 Not Found: /announce.php
+WARNING 2016-12-15 17:49:34,041 Not Found: /announce.php
+WARNING 2016-12-15 17:49:34,041 Not Found: /announce.php
+WARNING 2016-12-15 20:11:31,212 Not Found: /favicon.ico
+WARNING 2016-12-15 20:11:31,212 Not Found: /favicon.ico
+WARNING 2016-12-15 20:20:28,987 Not Found: /favicon.ico
+WARNING 2016-12-15 20:20:28,987 Not Found: /favicon.ico
+WARNING 2016-12-15 20:49:41,024 Not Found: /test/profile.png
+WARNING 2016-12-15 20:49:41,024 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:02,485 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:02,485 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:04,768 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:04,768 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:11,803 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:11,803 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:25,991 Not Found: /test/profile.png
+WARNING 2016-12-15 20:50:25,991 Not Found: /test/profile.png
+WARNING 2016-12-15 20:51:12,019 Not Found: /test/profile.png
+WARNING 2016-12-15 20:51:12,019 Not Found: /test/profile.png
+WARNING 2016-12-15 20:51:12,050 Not Found: /test/cabin.png
+WARNING 2016-12-15 20:51:12,050 Not Found: /test/cabin.png
+WARNING 2016-12-15 20:51:12,231 Not Found: /test/cake.png
+WARNING 2016-12-15 20:51:12,231 Not Found: /test/cake.png
+WARNING 2016-12-15 20:51:12,355 Not Found: /test/game.png
+WARNING 2016-12-15 20:51:12,356 Not Found: /test/circus.png
+WARNING 2016-12-15 20:51:12,355 Not Found: /test/game.png
+WARNING 2016-12-15 20:51:12,356 Not Found: /test/circus.png
+WARNING 2016-12-15 20:52:41,608 Not Found: /test/profile.png
+WARNING 2016-12-15 20:52:41,608 Not Found: /test/profile.png
+WARNING 2016-12-15 20:52:41,626 Not Found: /test/cabin.png
+WARNING 2016-12-15 20:52:41,626 Not Found: /test/cabin.png
+WARNING 2016-12-15 20:52:41,654 Not Found: /test/cake.png
+WARNING 2016-12-15 20:52:41,654 Not Found: /test/cake.png
+WARNING 2016-12-15 20:52:41,783 Not Found: /test/game.png
+WARNING 2016-12-15 20:52:41,783 Not Found: /test/game.png
+WARNING 2016-12-15 20:52:41,962 Not Found: /test/circus.png
+WARNING 2016-12-15 20:52:41,965 Not Found: /test/user.png
+WARNING 2016-12-15 20:52:41,962 Not Found: /test/circus.png
+WARNING 2016-12-15 20:52:41,965 Not Found: /test/user.png

@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron" style="background-image:url('/static/images/background.png');background-size:100% 100%;background-repeat:no-repeat;height:360px;">
+				<h1>
+					植保无人机飞行监视系统
+				</h1>
+				<p>
+				<br>
+				<br>
+				Monitoring System of UAVs for Plant Protecting
+				</p>
+				<p>
+					 <a class="btn btn-primary btn-large" href="#">了解更多</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<h3>
+				本站已有{{usercount}}位注册用户
+			</h3>
+			<img alt="140x140" src="/static/images/user.jpg" class="img-rounded" style="width:260px;height:162px;"/>
+		</div>
+		<div class="col-md-4 column">
+			<h3>
+				本站已注册无人机{{uavcount}}架
+			</h3>
+			<img alt="140x140" src="/static/images/uav.jpg" class="img-rounded" style="width:260px;height:162px;"/>
+		</div>
+		<div class="col-md-4 column">
+			<h3>
+				实时可视化飞行监控
+			</h3>
+			<img alt="140x140" src="/static/images/map.jpg" class="img-rounded" style="width:260px;height:162px;"/>
+		</div>
+	</div>
+ 
+{% endblock %}

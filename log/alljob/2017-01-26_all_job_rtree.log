@@ -1,0 +1,151 @@
+INFO 2017-01-26 11:19:01,437 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.526457,lat:39.9063515,code:110105}
+INFO 2017-01-26 11:19:03,811 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.3861775,lat:39.9856345,code:110108}
+INFO 2017-01-26 11:19:06,705 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.4488435,lat:39.976319000000004,code:110105}
+INFO 2017-01-26 11:19:11,418 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.45689250000001,lat:39.991431500000004,code:110105}
+INFO 2017-01-26 11:19:12,871 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.3994005,lat:39.955973,code:110102}
+INFO 2017-01-26 11:19:15,267 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.3850275,lat:39.981166,code:110108}
+INFO 2017-01-26 11:19:21,971 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.4672405,lat:39.977630000000005,code:110105}
+INFO 2017-01-26 11:19:27,234 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.512084,lat:40.0077825,code:110105}
+INFO 2017-01-26 11:21:01,446 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.444819,lat:39.975921,code:110105}
+INFO 2017-01-26 11:21:02,836 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.432171,lat:39.9689095,code:110105}
+INFO 2017-01-26 11:21:08,687 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.08377200000001,lat:39.9048135,code:110109}
+INFO 2017-01-26 11:21:09,755 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.13034,lat:39.833042000000006,code:110106}
+INFO 2017-01-26 11:21:22,777 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.40744950000001,lat:39.8809,code:110101}
+INFO 2017-01-26 11:21:23,742 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.3005155,lat:39.868054,code:110106}
+INFO 2017-01-26 11:21:24,933 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.29246649999999,lat:39.833488,code:110106}
+INFO 2017-01-26 11:21:25,466 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.26831949999999,lat:39.815312500000005,code:110106}
+INFO 2017-01-26 11:21:27,535 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.2309505,lat:39.810879,code:110111}
+INFO 2017-01-26 11:21:28,591 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.245323,lat:39.792254,code:110111}
+INFO 2017-01-26 11:21:35,886 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.20048,lat:40.006581999999995,code:110108}
+INFO 2017-01-26 11:21:46,838 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.22807599999999,lat:40.0909755,code:110108}
+INFO 2017-01-26 11:21:48,042 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.1941555,lat:40.023381,code:110108}
+INFO 2017-01-26 11:21:49,412 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.1746085,lat:39.966779,code:110107}
+INFO 2017-01-26 11:21:50,610 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.152762,lat:39.9123425,code:110109}
+INFO 2017-01-26 11:22:01,909 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.5293315,lat:39.916968,code:110105}
+INFO 2017-01-26 11:22:04,339 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.4011255,lat:39.929294,code:110101}
+ERROR 2017-01-26 11:22:06,366 
+frontend.views.ajax.frontend_all_job_rtree_ajax,,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 38, in frontend_all_job_rtree_ajax
+    job = Job.objects.get(id=i)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: Job matching query does not exist.
+
+ERROR 2017-01-26 11:22:09,172 
+frontend.views.ajax.frontend_all_job_rtree_ajax,,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 38, in frontend_all_job_rtree_ajax
+    job = Job.objects.get(id=i)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: Job matching query does not exist.
+
+ERROR 2017-01-26 11:22:14,897 
+frontend.views.ajax.frontend_all_job_rtree_ajax,,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 38, in frontend_all_job_rtree_ajax
+    job = Job.objects.get(id=i)
+  File "C:\Python34\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+model.models.DoesNotExist: Job matching query does not exist.
+
+INFO 2017-01-26 11:22:21,240 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.358007,lat:39.9675265,code:110108}
+INFO 2017-01-26 11:22:41,499 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.084922,lat:40.128491999999994,code:110114}
+INFO 2017-01-26 11:22:47,497 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.20163,lat:40.101574,code:110108}
+INFO 2017-01-26 11:22:51,445 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.88347949999999,lat:38.1426315,code:130921}
+INFO 2017-01-26 11:22:53,374 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.5155335,lat:38.920169,code:131026}
+INFO 2017-01-26 11:22:56,278 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:117.78494749999999,lat:39.2165785,code:120116}
+INFO 2017-01-26 11:23:04,832 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.47873899999999,lat:39.931315999999995,code:110105}
+INFO 2017-01-26 11:23:07,430 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.43044599999999,lat:39.827034499999996,code:110115}
+INFO 2017-01-26 11:23:08,234 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.1901315,lat:39.709256499999995,code:110111}
+INFO 2017-01-26 11:23:09,768 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.17288400000001,lat:39.706595,code:110111}
+INFO 2017-01-26 11:23:12,117 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.187832,lat:39.8591825,code:110106}
+INFO 2017-01-26 11:23:21,983 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.07284849999999,lat:40.105100500000006,code:110108}
+INFO 2017-01-26 11:23:24,090 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:115.7669935,lat:40.1404115,code:110109}
+INFO 2017-01-26 11:23:25,283 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:115.830234,lat:40.081254,code:110109}
+INFO 2017-01-26 11:23:26,821 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:115.869329,lat:40.02824,code:110109}
+INFO 2017-01-26 11:23:28,844 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:115.901524,lat:39.972522,code:110109}
+INFO 2017-01-26 11:23:29,700 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.582224,lat:39.8532095,code:110105}
+INFO 2017-01-26 11:23:32,639 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.2982155,lat:39.853537,code:110106}
+INFO 2017-01-26 11:23:34,357 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.42929649999999,lat:39.828770500000005,code:110115}
+INFO 2017-01-26 11:23:36,202 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.34420850000001,lat:39.8540195,code:110106}
+INFO 2017-01-26 11:23:38,799 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.5074845,lat:39.8708265,code:110105}
+INFO 2017-01-26 14:27:18,996 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.43044599999999,lat:39.8880965,code:110101}
+INFO 2017-01-26 14:27:20,985 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.410324,lat:39.966684,code:110101}
+INFO 2017-01-26 14:27:21,993 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.42929649999999,lat:39.94679,code:110101}
+INFO 2017-01-26 14:27:25,558 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.775395,lat:39.801302500000006,code:110112}
+INFO 2017-01-26 14:27:27,792 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.2982155,lat:39.9863755,code:110108}
+INFO 2017-01-26 14:27:31,260 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.40285,lat:39.9413795,code:110101}
+INFO 2017-01-26 14:27:33,587 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.3396095,lat:39.965165,code:110108}
+INFO 2017-01-26 14:27:36,739 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.20277949999999,lat:39.883108,code:110106}
+INFO 2017-01-26 14:27:46,516 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.4752895,lat:39.913430500000004,code:110105}
+INFO 2017-01-26 14:27:48,351 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.4666655,lat:39.9418705,code:110105}
+INFO 2017-01-26 14:28:29,651 
+common.tasks,,Check Alljob Rtree Successed.{ID:None,lng:116.38445300000001,lat:39.9967295,code:110105}
+INFO 2017-01-26 15:10:33,925 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:111.737267,lat:40.820884500000005,code:150105}
+INFO 2017-01-26 15:53:25,716 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.3792785,lat:39.983771,code:110108}

@@ -1,0 +1,74 @@
+
+{% extends "backend_base.html" %}
+
+
+{% block content %}
+
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "backend_uav_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+			<ul class="nav nav-pills">
+				<li class="active">
+					 <a>无人机 添加</a>
+				</li>
+			</ul>
+			<form role="form" method="post" id="uav_add_form">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="exampleInputText">选择所属用户</label>				
+					<select class="form-control" id="id_user" name="user">
+						<option value ="">------</option>
+					{% for u in user %}
+						<option value ="{{u.id}}">{{u.username}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择所属模型</label>				
+					<select class="form-control" id="id_uav_model" name="uav_model">
+						<option value ="">------</option>
+					{% for u in uavmodel %}
+						<option value ="{{u.id}}">{{u.uav_model}}</option>
+					{% endfor %}
+					</select>
+				</div>
+    			<div class="form-group">
+					 <label for="exampleInputText">无人机编号</label><input type="text" class="form-control" id="id_uav_id_code" name="uav_id_code"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">无人机SIM</label><input type="text" class="form-control" id="id_uav_sim" name="uav_sim"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">遥控器SIM</label><input type="text" class="form-control" id="id_controller_sim" name="controller_sim"/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">购买时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="2015-01-01T05:25:07Z" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_purchase_time" name="purchase_time" size="16" type="text" value="" >
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+	//language:  'fr',
+	weekStart: 1,
+	todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+	showMeridian: 1
+});
+</script>
+				<p class="form-actions">
+				<input type="submit" value="确认" class="btn btn-primary">
+				</p>
+			</form>
+	</div>
+</div>
+ 
+{% endblock %}

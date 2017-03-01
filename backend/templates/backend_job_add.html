@@ -1,0 +1,139 @@
+
+{% extends "backend_base.html" %}
+
+
+{% block content %}
+<div class="row clearfix">
+	<div class="col-md-3 column">
+		{% include "backend_job_sidebar.html" %}
+	</div>
+	<div class="col-md-9 column">
+			<ul class="nav nav-pills">
+				<li class="active">
+					 <a>作业 添加</a>
+				</li>
+			</ul>
+			<form role="form" method="post" id="job_add_form"  enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="exampleInputText">选择所属用户</label>				
+					<select class="form-control" id="id_user" name="user" required="required">
+						<option value ="">------</option>
+					{% for u in user %}
+						<option value ="{{u.id}}">{{u.username}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择作业类型</label>				
+					<select class="form-control" id="id_job_type" name="job_type" required="required">
+						<option value ="">------</option>
+					{% for u in job_type_list %}
+						<option value ="{{u.id}}">{{u.type}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">选择农业类型</label>				
+					<select class="form-control" id="id_farm_type" name="farm_type" required="required">
+						<option value ="">------</option>
+					{% for u in farm_type_list %}
+						<option value ="{{u.id}}">{{u.type}}</option>
+					{% endfor %}
+					</select>
+				</div>
+    			<div class="form-group">
+					 <label for="exampleInputText">作业流水号</label><input type="text" class="form-control" id="id_number" name="number" required="required"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">作业描述</label><input type="text" class="form-control" id="id_describe" name="describe"/>
+				</div>
+<!-- 				<div class="form-group">
+	 <label for="exampleInputText">GIS边界文件上传</label><input type="file" class="form-control" id="id_border_file" name="border_file"/>
+</div>
+<div class="form-group">
+	 <label for="exampleInputText">边界文件描述</label><input type="text" class="form-control" id="id_border_describe" name="border_describe"/>
+</div> -->
+				<div class="form-group">
+					<label for="exampleInputText">作业状态</label>				
+					<select class="form-control" id="id_status" name="status">
+						<option value ="0">未开始</option>
+						<option value ="1">进行中</option>
+						<option value ="2">已完成</option>
+					</select>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">负责人</label><input type="text" class="form-control" id="id_person_in_charge" name="person_in_charge"/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">开始时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="2015-01-01T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_start_time" name="start_time" size="16" type="text" value="" required="required">
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+				<div class="form-group">
+                	<label for="exampleInputText">最晚结束时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="2015-01-01T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_end_time" name="end_time" size="16" type="text" value=""  required="required">
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+	//language:  'fr',
+	weekStart: 1,
+	todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+	showMeridian: 1
+});
+</script>
+				<div class="form-group">
+					 <label for="exampleInputText">需求无人机数目</label><input type="text" class="form-control" id="id_uav_need" name="uav_need" placeholder="整数" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">每台无人机报酬(元)</label><input type="text" class="form-control" id="id_each_pay" name="each_pay" placeholder="整数" style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onkeypress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" required="required"/>
+				</div>
+				<div class="distpicker">
+					<div class="form-inline">
+					<label for="">所在地</label><br>
+						<div class="form-group">
+							<label class="sr-only" for="id_province">Province</label>
+							<select class="form-control" id="id_province" name="province">
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_city">City</label>
+							<select class="form-control" id="id_city" name="city"></select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_district">District</label>
+							<select class="form-control" id="id_district" name="district"></select>
+						</div>
+						</div>
+				</div>
+				<script type="text/javascript">
+					$(".distpicker").distpicker({
+						province: "北京",
+						city: "北京市",
+						district: "东城区"
+					});
+				</script>
+    			<div class="form-group">
+					 <label for="exampleInputText">详细地址</label><input type="text" class="form-control" id="id_address" name="address"/>
+				</div>
+				<p class="form-actions">
+				<input type="submit" value="确认" class="btn btn-primary">
+				</p>
+			</form>
+	</div>
+</div>
+ 
+{% endblock %}

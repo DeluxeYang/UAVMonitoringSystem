@@ -1,0 +1,99 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+<script>
+function batchdel()
+{
+    var checkbox = document.getElementsByName("user_manage_selected");
+    var number = 0;
+    if (checkbox.length != 0)   
+        {
+            for(i=0;i<checkbox.length;i++)
+                {
+                    if (checkbox[i].checked == true)
+                       { number++;}
+                }
+            if (number == 0)
+                {
+                    alert("请选择");
+                }
+            else
+                {
+                    var txt='确定删除这'+number+'项吗?';
+                    if (confirm(txt))
+                        {return true;}
+                    else
+                        {return false;}
+                }
+        }
+}
+function checkedAll()
+{
+    var allCheckVal = document.getElementById('all_checked').value;
+    var checked = false;
+    if (allCheckVal == '全选') 
+        {
+            document.getElementById('all_checked').value = '取消全选';
+            checked = true;
+        }
+    else
+        {
+            document.getElementById('all_checked').value = '全选';
+            checked = false;
+        }
+    var allcheck=document.getElementsByName("user_manage_selected");
+    for(var i = 0;i<allcheck.length;i++)
+        {
+            allcheck[i].checked = checked;
+        } 
+}
+</script>
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "backend_user_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+    		<ul class="nav nav-pills">
+				<li class="active">
+					 <a> <span class="badge pull-right">{{count}}</span> {{usertype}}</a>
+				</li>
+			</ul>
+			<form class="form" method="POST" action="" id="id_user_manage">
+			{% csrf_token %}
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th></th>
+						<th>编号ID</th>
+						<th>用户名</th>
+						<th>邮箱</th>
+						<th>描述</th>
+						<th>权限</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for u in user %}
+					<tr class="info">
+						<td><input value="{{u.id}}"  id="id_user_manage_selected_{{u.id}}" name="user_manage_selected" type="checkbox"/></td>
+						<td>{{u.id}}</td>
+						<td><a href="/backend/userdetail/?id={{u.id}}">{{u.username}}</a></td>
+						<td>{{u.email|default:""}}</td>
+						<td>{{u.describe|default:""}}</td>
+						<td>{{u.level}}</td>
+						<td>
+							<a href="/backend/useredit/?id={{u.id}}">编辑</a>/
+							<a href="/backend/userdelete/?id={{u.id}}" onclick="return confirm('确认删除{{u.username}}？')">删除</a>
+						</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+			<input type="button" id="all_checked" name="all_checked" value="全选" onclick="checkedAll()" />
+			<input class="alldel" id="id_batch_delete" name="batch_delete" type="submit" onclick="return batchdel()" 
+			value="批量删除"/>
+			</form>
+	</div>
+</div>
+{% endblock %}

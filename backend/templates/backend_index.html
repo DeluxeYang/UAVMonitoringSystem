@@ -1,0 +1,128 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+
+.type-ctr {
+	position: absolute;
+	z-index: 9999;
+	background: rgba(8, 47, 76, 0.8);
+	box-sizing: content-box;
+	margin-bottom: 2px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	cursor: pointer;
+	top: 5px;
+	width: 150px;
+	margin: 0px;
+	height: 33px;
+}
+.type-ctr.active {
+	background: rgba(9, 34, 53, 0.8);
+	top: 80%;
+	width: 150px;
+	margin: 20px;
+	height: 33px;
+}
+#track-btn {
+	left: 15px;
+}
+
+.type-ctr a {
+	font-size: 14px;
+	text-decoration: none;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	line-height: 32px;
+	text-align: center;
+	color: #eeeeee;
+}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=upTvjM7vTHHlXckl6gxFkndl"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+
+<script src="/static/ajax/backend/baiduAPI.js" type="text/javascript"></script><!-- 地图初始化 -->
+<script src="/static/ajax/frontend/baiduMap_polygon_zoom.js" type="text/javascript"></script>
+<script src="/static/ajax/backend/backend_index.js" type="text/javascript"></script><!-- 本页对百度地图的ajax操作 -->
+
+<div style="height:100%;padding-left:0px;padding-right:0px;" class="col-md-10 column">
+	<div style="height:100%;border:#ccc solid 1px;" id="mapDiv"></div>
+	<div id="track-btn" class="type-ctr active" data-tag="0">
+    	<a onclick="javascript:baiduMap_reset();document.getElementById('id_uav_details').style.display = 'none';document.getElementById('id_uav_details_thr_ss').style.display = 'none';">重新载入地图</a>
+	</div>
+</div>
+<div style="height:100%;padding-left:10px;" class="col-md-2 column">
+	<div class="panel-group" id="accordion" style="width: 100%;">
+		<div class="panel panel-default" style="width: 100%;">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					无人机信息
+				</h3>
+			</div>
+			<div class="panel-body" style="width: 100%;">
+				<div class="form-group" >
+					<label for="exampleInputText">正在飞行的无人机</label>
+					<p class="form-control" >{{uavs|length}}<p/>
+				</div>
+				<div class="form-group" id="id_uav_details" style="display: none;width: 100%;">
+					<label for="exampleInputText">无人机编号</label>
+					<p  id="id_uav_id_code"> </p>
+					<label for="exampleInputText">作业编号</label>
+					<p  id="id_job_id"> </p>
+					<label for="exampleInputText">时间</label>
+					<p  id="id_time"> </p>
+					<label for="exampleInputText">经度</label>
+					<p  id="id_longitude"> </p>
+					<label for="exampleInputText">纬度</label>
+					<p  id="id_latitude"> </p>
+					<label for="exampleInputText">海拔</label>
+					<p  id="id_height"> </p>
+					<label for="exampleInputText">离地高度</label>
+					<p  id="id_AGL"> </p>
+					<label for="exampleInputText">磁航向</label>
+					<p  id="id_compass"> </p>
+				</div>
+				<div class="form-group" id="id_uav_details_thr_ss" style="display: none;width: 100%;">
+					<label for="exampleInputText">地速北</label>
+					<p  id="id_VNorth"> </p>
+					<label for="exampleInputText">地速东</label>
+					<p  id="id_VEast"> </p>
+					<label for="exampleInputText">地速下</label>
+					<p  id="id_VDown"> </p>
+					<label for="exampleInputText">真空速</label>
+					<p  id="id_TAS"> </p>
+					<label for="exampleInputText">滚转角</label>
+					<p  id="id_ROLL"> </p>
+					<label for="exampleInputText">俯仰角</label>
+					<p  id="id_PITCH"> </p>
+					<label for="exampleInputText">偏航角</label>
+					<p  id="id_YAW"> </p>
+					<label for="exampleInputText">油电消耗</label>
+					<p  id="id_FuelFlow"> </p>
+					<label for="exampleInputText">油电剩余</label>
+					<p  id="id_Fuel"> </p>
+					<label for="exampleInputText">电源电压</label>
+					<p  id="id_MainPowerV"> </p>
+					<label for="exampleInputText">电源电流</label>
+					<p  id="id_MainPowerA"> </p>
+					<label for="exampleInputText">舵机电压</label>
+					<p  id="id_ServoPowerV"> </p>
+					<label for="exampleInputText">舵机电流</label>
+					<p  id="id_ServoPowerA"> </p>
+					<label for="exampleInputText">主板温度</label>
+					<p  id="id_BoardT"> </p>
+				</div>
+			</div>
+			<div class="panel-footer">		
+			</div>
+		</div>
+	</div>
+</div>
+
+        
+
+{% endblock %}

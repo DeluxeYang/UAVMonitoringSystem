@@ -1,0 +1,9 @@
+INFO 2016-10-14 16:21:26,207 common.views.login, Deluxe, ID:1, Login Success.
+INFO 2016-10-14 16:22:39,626 common.views.logout, Deluxe, ID:1, Logout Success. Duration:0:01:14.582718
+INFO 2016-10-14 16:23:42,084 common.views.login, Deluxe, ID:1, Login Success.
+INFO 2016-10-14 16:25:38,090 common.views.login, Deluxe, ID:1, Login Success.
+ERROR 2016-10-14 16:29:45,301 common.views.test127.0.0.1
+ERROR 2016-10-14 16:30:02,112 common.views.test  I AM A LOGGER!!!!
+ERROR 2016-10-14 16:30:04,977 common.views.test  I AM A LOGGER!!!!
+INFO 2016-10-14 16:52:28,344 common.views.logout, Deluxe, Logout Success.{ID:1,IP:127.0.0.1,Duration:0:26:50.314027}
+INFO 2016-10-14 16:53:37,751 common.views.login, Deluxe, Login Success.{ID:1,IP:127.0.0.1}

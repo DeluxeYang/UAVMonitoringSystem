@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<style>
+#job_area {display:none;}
+</style>
+<div class="row clearfix">
+	<div class="col-md-12 column">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<a href="/alljob/">跨区域作业查询</a>
+				</h3>
+				<div class="form-inline">
+					{% include "distpicker.html" %}
+				</div>
+			</div>
+			<div class="panel-body">
+				{% include "baiduMap_all_job_rtree.html" %}
+			</div>
+			<div class="panel-footer">
+				<div id="job_details" style="display:none">
+					<table id="tab" class="table table-bordered">
+						<thead>
+							<tr>
+								<th>作业流水号</th>
+								<th>所属用户</th>
+								<th>作业状态</th>
+								<th>作物状态</th>
+								<th>作业类型</th>
+								<th>地点</th>
+								<th>开始时间</th>
+								<th>价格</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+				</div>
+				<h3 class="panel-title">
+					全网未开始、进行中作业列表
+				</h3>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

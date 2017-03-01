@@ -1,0 +1,108 @@
+
+{% extends "backend_base.html" %}
+
+{% block content %}
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "backend_uav_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+        	<ul class="nav nav-pills">
+				<li class="active">
+					 <a> 无人机 {{uav.id}} 编辑</a>
+				</li>
+			</ul>
+    		<form role="form" method="post" id="uav__edit_form">
+    			{% csrf_token %}
+    			<div class="form-group">
+					 <label for="exampleInputText">无人机编号</label><input type="text" class="form-control" value="{{uav.uav_id_code}}" id="id_uav_id_code" name="uav_id_code"/>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">所属用户</label>				
+					<select class="form-control" id="id_user" name="user">
+						<option value ="{{uav.user.id}}">{{uav.user.username}}</option>
+					{% for u in user %}
+						<option value ="{{u.id}}">{{u.username}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputText">所属模型</label>				
+					<select class="form-control" id="id_uav_model" name="uav_model">
+						<option value ="{{uav.uav_model.id}}">{{uav.uav_model.uav_model}}</option>
+					{% for u in uavmodel %}
+						<option value ="{{u.id}}">{{u.uav_model}}</option>
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">无人机SIM</label><input type="text" class="form-control" value="{{uav.uav_sim}}" id="id_uav_sim" name="uav_sim"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">遥控器SIM</label><input type="text" class="form-control" value="{{uav.controller_sim}}" id="id_controller_sim" name="controller_sim"/>
+				</div>
+				<div class="distpicker">
+					<div class="form-inline">
+					<label for="">所在地址</label><br>
+						<div class="form-group">
+							<label class="sr-only" for="id_province">Province</label>
+							<select class="form-control" id="id_province" name="province">
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_city">City</label>
+							<select class="form-control" id="id_city" name="city"></select>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="id_district">District</label>
+							<select class="form-control" id="id_district" name="district"></select>
+						</div>
+						</div>
+				</div>
+				<script type="text/javascript">
+					$(".distpicker").distpicker({
+						province: "{{province.province}}",
+						city: "{{city.city}}",
+						district: "{{district.district}}"
+					});
+				</script>
+				<div class="form-group">
+					 <label for="exampleInputText">详细地址</label><input type="text" class="form-control" id="id_address" name="address" value="{{uav.address}}"/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">购买时间</label>
+                	<div class="input-group date form_datetime col-md-5" data-date="2015-01-01T05:25:07Z" data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
+                    	<input class="form-control" id="id_purchase_time" name="purchase_time" size="16" type="text" value="{{uav.purchase_time|date:"Y-m-d"}}" >
+                    	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+            	</div>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+	//language:  'fr',
+	weekStart: 1,
+	todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+	showMeridian: 1
+});
+</script>
+
+				<div class="form-group">
+					 <label for="exampleInputText">已飞行里程(米)</label><input type="text" class="form-control" id="id_mile_age" name="mile_age" value="{{uav.mile_age}}"/>
+				</div>
+
+				<div class="checkbox-row">
+                    <input value="1"  id="id_is_active" name="is_active" type="checkbox" 
+                    {%if uav.is_active %}
+                    checked
+                    {%endif%} /><label class="vCheckboxLabel" for="id_is_admin">激活</label>
+                </div>
+                <button type="submit" class="btn btn-primary">提交</button>
+			</form>
+	</div>
+</div>
+{% endblock %}

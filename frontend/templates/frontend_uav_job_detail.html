@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "profile_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+    <div class="panel panel-default">
+        	<div class="panel-heading">
+				<h3 class="panel-title">
+					作业详情
+					{% if not job_detail.confirm %}
+						<a href="/jobdetail/uavjobdetail/confirm/?id={{job_detail.id}}" onclick="return confirm('确认该申请？一旦确认，不可更改')"><input type="button" class="button pull-right" value="确认该机的申请"/></a>
+					{% endif %}
+				</h3>
+			</div>
+			<div class="panel-body">
+    		<form role="form" method="post" id="job_form">
+    			{% csrf_token %}
+				<div class="form-group">
+					 <label for="exampleInputEmail1">作业流水号</label>
+					 <input type="text" class="form-control" value="{{job_detail.job.number}}" readonly id="id_number" name="number"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">无人机编号</label>
+					 <input type="text" class="form-control" value=
+					 "{{job_detail.uav.uav_id_code}}" readonly id="id_uav_id_code" name="uav_id_code"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">无人机型号</label>
+					 <input type="text" class="form-control" value=
+					 "{{job_detail.uav.uav_model.name}}" readonly id="id_uav_id_code" name="uav_id_code"/>
+					 <a href="/uavmodel/?uav={{job_detail.uav.uav_model.id}}">点击查看详情</a>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">购买时间</label>
+					 <input type="text" class="form-control" value=
+					 "{{job_detail.uav.purchase_time|date:"Y-m-d H:i:s"}}" readonly id="id_uav_id_code" name="uav_id_code"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">飞行里程</label>
+					 <input type="text" class="form-control" value=
+					 "{{job_detail.uav.mile_age}} 米" readonly id="id_uav_id_code" name="uav_id_code"/>
+				</div>
+                <div class="form-group" id="bounds_div" style="display:none;color:red">
+                     <label for="exampleInputText">越界警告</label>
+                     <input  id="bounds_div_value" type="text" class="form-control" value="" style="color:red"/>
+                </div>
+			</form>
+                
+{% if job_detail.confirm %}
+	{% include "baiduMap_uav_job.html" %}
+{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

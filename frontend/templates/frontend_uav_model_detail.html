@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row clearfix">
+    <div class="col-md-3 column">
+        {% include "profile_sidebar.html" %}
+    </div>
+    <div class="col-md-9 column">
+
+    		<form role="form" method="post" id="uav_model_edit_form">
+    			{% csrf_token %}
+				<div class="form-group">
+					 <label for="exampleInputEmail1">无人机模型编号</label><input type="text" class="form-control" value="{{uavmodel.uav_model}}" readonly id="id_uavmodel_uav_model" name="uavmodel_uav_model"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">无人机模型名</label><input type="text" class="form-control" value="{{uavmodel.name}}" readonly id="id_uavmodel_name" name="uavmodel_name"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">功能类型</label>
+					 <input type="text" class="form-control" id="id_function_type" name="function_type" readonly value="{{uavmodel.function_type}}"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">产品编号</label>
+					 <input type="text" class="form-control" id="id_serial_number" name="serial_number" readonly value="{{uavmodel.serial_number}}"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">公司</label>
+					 <input type="text" class="form-control" id="id_company" name="company" readonly value="{{uavmodel.company}}"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">产地</label>
+					 <input type="text" class="form-control" id="id_origin_place" name="origin_place" readonly value="{{uavmodel.origin_place}}"/>
+				</div>
+				<div class="form-group">
+                	<label for="exampleInputText">设计日期</label>
+                    <input class="form-control" id="id_design_date" name="design_date" type="text" readonly value="{{uavmodel.design_date|date:"Y-m-d"}}" >
+            	</div>
+				<div class="form-group">
+					 <label for="exampleInputText">自重(克)</label><input type="text" class="form-control" id="id_weight" name="weight" readonly value="{{uavmodel.weight}}克"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">载重(克)</label><input type="text" class="form-control" id="id_load_weight" name="load_weight" readonly value="{{uavmodel.load_weight}}克"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">对角线距离(米)</label><input type="text" class="form-control" id="id_diagonal_distance" name="diagonal_distance" readonly value="{{uavmodel.diagonal_distance}}米" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">螺旋桨数目</label><input type="text" class="form-control" id="id_propeller_num" name="propeller_num" readonly value="{{uavmodel.propeller_num}}个" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大上升速度(米/秒)</label><input type="text" class="form-control" id="id_max_rise" name="max_rise" readonly value="{{uavmodel.max_rise}}米/秒" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大下降速度(米/秒)</label><input type="text" class="form-control" id="id_max_decline" name="max_decline" readonly value="{{uavmodel.max_decline}}米/秒" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大水平速度(米/秒)</label><input type="text" class="form-control" id="id_max_speed" name="max_speed" readonly value="{{uavmodel.max_speed}}米/秒" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大飞行高度(米)</label><input type="text" class="form-control" id="id_max_height" name="max_height" readonly value="{{uavmodel.max_height}}米" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">最大倾斜角(度)</label><input type="text" class="form-control" id="id_max_angle" name="max_angle" readonly value="{{uavmodel.max_angle}}度" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">悬停垂直精度(米)</label><input type="text" class="form-control" id="id_precision_v" name="precision_v" readonly value="{{uavmodel.precision_v}}米" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">悬停水平精度(米)</label><input type="text" class="form-control" id="id_precision_h" name="precision_h" readonly value="{{uavmodel.precision_h}}米" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">GPS模式</label><input type="text" class="form-control" id="id_GPS_mode" name="GPS_mode"  readonly value="{{uavmodel.GPS_mode}}"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">信号模式</label><input type="text" class="form-control" id="id_signal_mode"  readonly name="signal_mode" value="{{uavmodel.signal_mode}}"/>
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputText">其他</label><input type="text" class="form-control" value="{{uavmodel.other}}" readonly id="id_uavmodel_other" name="uavmodel_other"/>
+				</div>
+
+			</form>
+	</div>
+</div>
+{% endblock %}

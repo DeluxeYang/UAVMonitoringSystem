@@ -1,0 +1,7 @@
+Django==1.8.1
+pymysql==0.7.9
+celery==3.1.23
+django-celery==3.1.17
+djangorestframework==3.4.6
+pyshp==1.2.3
+
