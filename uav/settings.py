@@ -26,7 +26,6 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [
-    '202.205.84.172', # Allow domain and subdomains
     'localhost', # Also allow FQDN and subdomains
     ]
 
@@ -71,7 +70,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'root',
         'HOST': '',
         'PORT': '3306',
     }
@@ -110,13 +109,7 @@ MEDIA_ROOT = 'upload/'
 MEDIA_URL = '/upload/'
 
 
-BROKER_URL = 'redis://202.205.84.172:8017/0'
-#RabbitMQ配置
-# BROKER_HOST = "202.205.84.172"
-# BROKER_PORT = 8017
-# BROKER_USER = ""
-# BROKER_PASSWORD = ""
-# BROKER_VHOST = "/"
+BROKER_URL = 'redis://0.0.0.0:6379/0'
 
 # 使用和Django一样的时区
 CELERY_TIMEZONE = TIME_ZONE
