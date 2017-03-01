@@ -2,7 +2,9 @@
 
 
 Django工程：uav
+
 Django app ：model   backend   frontend    common
+
 其他文件夹：静态文件static（包含css  js  image等）用户上传文件upload
 
 Django配置文件：	/uav/setting.py
