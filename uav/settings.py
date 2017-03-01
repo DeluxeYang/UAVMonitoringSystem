@@ -109,7 +109,7 @@ MEDIA_ROOT = 'upload/'
 MEDIA_URL = '/upload/'
 
 
-BROKER_URL = 'redis://0.0.0.0:6379/0'
+BROKER_URL = 'redis://127.0.0.1:6379/0'
 
 # 使用和Django一样的时区
 CELERY_TIMEZONE = TIME_ZONE
