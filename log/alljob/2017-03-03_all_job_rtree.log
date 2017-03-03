@@ -1,0 +1,1117 @@
+ERROR 2017-03-03 22:01:16,641 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python36\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python36\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python36\lib\site-packages\celery\app\base.py", line 348, in send_task
+    with self.producer_or_acquire(producer) as P:
+  File "C:\Python36\lib\site-packages\celery\utils\objects.py", line 85, in __enter__
+    *self.fb_args, **self.fb_kwargs
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 883, in acquire
+    R = self.prepare(R)
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 61, in prepare
+    p = p()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 29, in __call__
+    return self.evaluate()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 32, in evaluate
+    return self._fun(*self._args, **self._kwargs)
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 41, in create_producer
+    conn = self._acquire_connection()
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 38, in _acquire_connection
+    return self.connections.acquire(block=True)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 883, in acquire
+    R = self.prepare(R)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 1036, in prepare
+    resource = resource()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 29, in __call__
+    return self.evaluate()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 32, in evaluate
+    return self._fun(*self._args, **self._kwargs)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 1005, in new
+    return self.connection.clone()
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 539, in clone
+    return self.__class__(**dict(self._info(resolve=False), **kwargs))
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 548, in _info
+    D = self.transport.default_connection_params
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 784, in transport
+    self._transport = self.create_transport()
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 527, in create_transport
+    return self.get_transport_cls()(client=self)
+  File "C:\Python36\lib\site-packages\kombu\transport\redis.py", line 981, in __init__
+    raise ImportError('Missing redis library (pip install redis)')
+ImportError: Missing redis library (pip install redis)
+
+ERROR 2017-03-03 22:01:18,585 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python36\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python36\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python36\lib\site-packages\celery\app\base.py", line 348, in send_task
+    with self.producer_or_acquire(producer) as P:
+  File "C:\Python36\lib\site-packages\celery\utils\objects.py", line 85, in __enter__
+    *self.fb_args, **self.fb_kwargs
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 883, in acquire
+    R = self.prepare(R)
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 61, in prepare
+    p = p()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 29, in __call__
+    return self.evaluate()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 32, in evaluate
+    return self._fun(*self._args, **self._kwargs)
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 41, in create_producer
+    conn = self._acquire_connection()
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 38, in _acquire_connection
+    return self.connections.acquire(block=True)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 883, in acquire
+    R = self.prepare(R)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 1036, in prepare
+    resource = resource()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 29, in __call__
+    return self.evaluate()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 32, in evaluate
+    return self._fun(*self._args, **self._kwargs)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 1005, in new
+    return self.connection.clone()
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 539, in clone
+    return self.__class__(**dict(self._info(resolve=False), **kwargs))
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 548, in _info
+    D = self.transport.default_connection_params
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 784, in transport
+    self._transport = self.create_transport()
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 527, in create_transport
+    return self.get_transport_cls()(client=self)
+  File "C:\Python36\lib\site-packages\kombu\transport\redis.py", line 981, in __init__
+    raise ImportError('Missing redis library (pip install redis)')
+ImportError: Missing redis library (pip install redis)
+
+ERROR 2017-03-03 22:01:37,132 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python36\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python36\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python36\lib\site-packages\celery\app\base.py", line 348, in send_task
+    with self.producer_or_acquire(producer) as P:
+  File "C:\Python36\lib\site-packages\celery\utils\objects.py", line 85, in __enter__
+    *self.fb_args, **self.fb_kwargs
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 883, in acquire
+    R = self.prepare(R)
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 61, in prepare
+    p = p()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 29, in __call__
+    return self.evaluate()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 32, in evaluate
+    return self._fun(*self._args, **self._kwargs)
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 41, in create_producer
+    conn = self._acquire_connection()
+  File "C:\Python36\lib\site-packages\kombu\pools.py", line 38, in _acquire_connection
+    return self.connections.acquire(block=True)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 883, in acquire
+    R = self.prepare(R)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 1036, in prepare
+    resource = resource()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 29, in __call__
+    return self.evaluate()
+  File "C:\Python36\lib\site-packages\kombu\utils\functional.py", line 32, in evaluate
+    return self._fun(*self._args, **self._kwargs)
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 1005, in new
+    return self.connection.clone()
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 539, in clone
+    return self.__class__(**dict(self._info(resolve=False), **kwargs))
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 548, in _info
+    D = self.transport.default_connection_params
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 784, in transport
+    self._transport = self.create_transport()
+  File "C:\Python36\lib\site-packages\kombu\connection.py", line 527, in create_transport
+    return self.get_transport_cls()(client=self)
+  File "C:\Python36\lib\site-packages\kombu\transport\redis.py", line 981, in __init__
+    raise ImportError('Missing redis library (pip install redis)')
+ImportError: Missing redis library (pip install redis)
+
+ERROR 2017-03-03 22:03:11,246 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 28, in frontend_all_job_rtree_ajax
+    idx = myRtree()
+  File "C:\uav\common\myRtree.py", line 9, in myRtree
+    idx = index.Index(index_name)#打开Rtree
+  File "C:\Python36\lib\site-packages\rtree\index.py", line 226, in __init__
+    if not self.properties.overwrite:
+  File "C:\Python36\lib\site-packages\rtree\index.py", line 1095, in get_overwrite
+    return bool(core.rt.IndexProperty_GetOverwrite(self.handle))
+  File "C:\Python36\lib\site-packages\rtree\core.py", line 49, in check_value
+    raise RTreeError(msg)
+rtree.core.RTreeError: Error in "IndexProperty_GetOverwrite": Property IndexIdentifier was empty
+
+INFO 2017-03-03 22:03:11,528 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.888654,lat:40.059176,code:110113}
+INFO 2017-03-03 22:03:13,937 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.3948015,lat:39.930208,code:110102}
+INFO 2017-03-03 22:03:16,133 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.4689655,lat:39.951148,code:110105}
+INFO 2017-03-03 22:03:17,470 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.451718,lat:39.938378,code:110105}
+INFO 2017-03-03 22:03:47,303 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.46551600000001,lat:39.9693765,code:110105}
+INFO 2017-03-03 22:03:48,925 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.340184,lat:39.9343475,code:110108}
+INFO 2017-03-03 22:03:50,419 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.1901315,lat:39.864507,code:110106}
+INFO 2017-03-03 22:03:51,433 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.29994049999999,lat:39.8427945,code:110106}
+INFO 2017-03-03 22:03:52,708 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.3459335,lat:39.865394,code:110106}
+INFO 2017-03-03 22:03:53,357 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.3672055,lat:39.895514500000004,code:110102}
+INFO 2017-03-03 22:04:17,316 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.52243250000001,lat:40.0206455,code:110105}
+ERROR 2017-03-03 22:36:47,975 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 771, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 310, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 470, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 382, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 250, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+ERROR 2017-03-03 22:36:50,712 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 771, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 310, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 470, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 382, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 250, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+ERROR 2017-03-03 22:37:04,190 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 771, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 310, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 470, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 382, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 250, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+ERROR 2017-03-03 22:37:17,770 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 423, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 177, in _publish
+    channel = self.channel
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 194, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 425, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 209, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 771, in default_channel
+    self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 310, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 470, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 382, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 250, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+INFO 2017-03-03 22:39:46,602 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.458042,lat:39.992767,code:110105}
+INFO 2017-03-03 22:39:47,587 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.5425545,lat:39.968022,code:110105}
+INFO 2017-03-03 22:39:48,981 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.52703199999999,lat:39.949801,code:110105}
+INFO 2017-03-03 22:39:49,972 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.46264099999999,lat:39.971081,code:110105}
+INFO 2017-03-03 22:39:51,741 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.4689655,lat:39.9626025,code:110105}
+INFO 2017-03-03 22:39:53,912 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.3620315,lat:39.980819,code:110108}
+INFO 2017-03-03 22:39:55,393 
+common.tasks,Deluxe,Check Alljob Rtree Successed.{ID:1,lng:116.3712295,lat:39.953871500000005,code:110108}
+ERROR 2017-03-03 22:40:14,769 
+frontend.views.ajax.frontend_all_job_rtree_ajax,Deluxe,Check Alljob Rtree Failed.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 543, in send_packed_command
+    self._sock.sendall(item)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 556, in send_packed_command
+    (errno, errmsg))
+redis.exceptions.ConnectionError: Error 10054 while writing to socket. 远程主机强迫关闭了一个现有的连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 449, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 188, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 521, in basic_publish
+    message, exchange, routing_key, **kwargs
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\exchange.py", line 60, in deliver
+    for queue in _lookup(exchange, routing_key):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 612, in _lookup
+    self.get_table(exchange),
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 758, in get_table
+    values = client.smembers(key)
+  File "C:\Python34\lib\site-packages\redis\client.py", line 1532, in smembers
+    return self.execute_command('SMEMBERS', name)
+  File "C:\Python34\lib\site-packages\redis\client.py", line 578, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 789, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 439, in connect
+    sock = self._connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 494, in _connect
+    raise err
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 482, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\redis\client.py", line 572, in execute_command
+    connection.send_command(*args)
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 464, in __init__
+    self.client.info()
+  File "C:\Python34\lib\site-packages\redis\client.py", line 665, in info
+    return self.execute_command('INFO')
+  File "C:\Python34\lib\site-packages\redis\client.py", line 575, in execute_command
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 496, in _on_connection_disconnect
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 54, in frontend_all_job_rtree_ajax
+    All_Job_Rtree_Logger.delay(nowuser,(lng_min+lng_max)/2,(lat_min+lat_max)/2)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 453, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Python34\lib\site-packages\celery\app\task.py", line 565, in apply_async
+    **dict(self._get_exec_options(), **options)
+  File "C:\Python34\lib\site-packages\celery\app\base.py", line 354, in send_task
+    reply_to=reply_to or self.oid, **options
+  File "C:\Python34\lib\site-packages\celery\app\amqp.py", line 310, in publish_task
+    **kwargs
+  File "C:\Python34\lib\site-packages\kombu\messaging.py", line 172, in publish
+    routing_key, mandatory, immediate, exchange, declare)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 470, in _ensured
+    interval_max)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 382, in ensure_connection
+    interval_start, interval_step, interval_max, callback)
+  File "C:\Python34\lib\site-packages\kombu\utils\__init__.py", line 246, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 250, in connect
+    return self.connection
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 756, in connection
+    self._connection = self._establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\connection.py", line 711, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 809, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Python34\lib\site-packages\kombu\transport\virtual\__init__.py", line 791, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 466, in __init__
+    self._disconnect_pools()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 484, in _disconnect_pools
+    self._async_pool.disconnect()
+  File "C:\Python34\lib\site-packages\redis\connection.py", line 921, in disconnect
+    connection.disconnect()
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 866, in disconnect
+    channel._on_connection_disconnect(self)
+  File "C:\Python34\lib\site-packages\kombu\transport\redis.py", line 498, in _on_connection_disconnect
+    raise get_redis_ConnectionError()
+redis.exceptions.ConnectionError
+

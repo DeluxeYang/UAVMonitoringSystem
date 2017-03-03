@@ -4,4 +4,5 @@ celery==3.1.23
 django-celery==3.1.17
 djangorestframework==3.4.6
 pyshp==1.2.3
-
+rtree
+redis

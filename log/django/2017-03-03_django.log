@@ -1,0 +1,70 @@
+ERROR 2017-03-03 22:00:43,703 Internal Server Error: /alljobs/
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 368, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 240, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 247, in callback
+    self._callback = get_callable(self._callback_str)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 106, in get_callable
+    mod = import_module(mod_name)
+  File "C:\Python36\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 978, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 950, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 205, in _call_with_frames_removed
+  File "C:\uav\frontend\views\all_job\frontend_all_job_rtree.py", line 13, in <module>
+    from common.myRtree import *
+  File "C:\uav\common\myRtree.py", line 1, in <module>
+    from rtree import index
+ModuleNotFoundError: No module named 'rtree'
+ERROR 2017-03-03 22:00:43,703 Internal Server Error: /alljobs/
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 368, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 240, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 247, in callback
+    self._callback = get_callable(self._callback_str)
+  File "C:\Python36\lib\site-packages\django\core\urlresolvers.py", line 106, in get_callable
+    mod = import_module(mod_name)
+  File "C:\Python36\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 978, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 950, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 205, in _call_with_frames_removed
+  File "C:\uav\frontend\views\all_job\frontend_all_job_rtree.py", line 13, in <module>
+    from common.myRtree import *
+  File "C:\uav\common\myRtree.py", line 1, in <module>
+    from rtree import index
+ModuleNotFoundError: No module named 'rtree'
+WARNING 2017-03-03 22:00:44,343 Not Found: /favicon.ico
+WARNING 2017-03-03 22:00:44,343 Not Found: /favicon.ico
+ERROR 2017-03-03 22:03:11,248 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python36\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 61, in frontend_all_job_rtree_ajax
+    return JsonResponse(j)
+UnboundLocalError: local variable 'j' referenced before assignment
+ERROR 2017-03-03 22:03:11,248 Internal Server Error: /frontend/all_job_rtree_ajax/
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python36\lib\site-packages\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\uav\frontend\views\ajax\frontend_all_job_rtree_ajax.py", line 61, in frontend_all_job_rtree_ajax
+    return JsonResponse(j)
+UnboundLocalError: local variable 'j' referenced before assignment

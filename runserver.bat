@@ -1,1 +1,1 @@
-py -3 manage.py runserver
+python34 manage.py runserver
