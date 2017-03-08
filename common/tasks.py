@@ -5,6 +5,7 @@ from urllib.request import urlopen
 import django
 from django.template.context import RequestContext
 import datetime
+import time
 
 from model.models import *
 from common.myRtree import *
@@ -177,9 +178,3 @@ def All_Job_View_Details(nowuser,job):
             +',each_pay:'+str(job.each_pay)
             +',code:'+str(job.nation)+'}')
 
-@task
-def Sent_All_Job_Log_To_Flume():
-    # start a new Netcat() instance
-    nc = Netcat('202.205.84.172', 8018)
-    nc.write('new' + '\n')
-    nc.close()
