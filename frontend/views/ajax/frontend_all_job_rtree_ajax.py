@@ -35,7 +35,10 @@ def frontend_all_job_rtree_ajax(request):
         temp_temp = {}
         count = 0
         for i in job_list:
-            job = Job.objects.get(id=i)
+            try:
+                job = Job.objects.get(id=i)
+            except Job.DoesNotExist:
+                continue
             job_border = Job_Border.objects.filter(job_id=job.id)
             num = 0
             temp_temp = {}

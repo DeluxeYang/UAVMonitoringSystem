@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 @login_required
 def test(request):
-    Sent_All_Job_Log_To_Flume.delay()
+    Sent_All_Job_Log_To_Flume.delay(request.user, 116.564, 40.56464, 8021)
     return render_to_response('test.html',{
     },
     context_instance=RequestContext(request))

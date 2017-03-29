@@ -35,13 +35,13 @@ def login(request):
             next_page = request.GET.get("next",None)
             if user is not None and user.is_active:
                 auth.login(request, user)
-                ###Rtree
-                uavs = UAV.objects.filter(user_id = nowuser.id)
-                if len(uavs) > 0:
-                    j = Rtree_Jobs_Recommend(nowuser)
-                    if j:
-                        messages.success(request, "根据您的位置，为您推荐"+str(j['length'])+"条植保作业，<a href='/alljobsrecommend/' >详情点击</a> ")
-                ###Rtree
+                # ###Rtree
+                # uavs = UAV.objects.filter(user_id = nowuser.id)
+                # if len(uavs) > 0:
+                #     j = Rtree_Jobs_Recommend(nowuser)
+                #     if j:
+                #         messages.success(request, "根据您的位置，为您推荐"+str(j['length'])+"条植保作业，<a href='/alljobsrecommend/' >详情点击</a> ")
+                # ###Rtree
                 logger.info(__name__+', '+user.username+', Login Success.'
                     +'{ID:'+str(user.id)+',IP:'+IP+'}')
                 if user.is_admin:

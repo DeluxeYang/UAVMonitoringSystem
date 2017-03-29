@@ -6,7 +6,7 @@ import django
 from django.template.context import RequestContext
 import datetime
 import time
-
+import json
 from model.models import *
 from common.myRtree import *
 from common.Netcat import *
@@ -19,10 +19,14 @@ from django.core import serializers#objects 转化为 json
 
 import logging
 import traceback
+
 logger_rtree = logging.getLogger('frontend.views.alljob.rtree')
 logger_alljob = logging.getLogger('frontend.views.alljob.alljob')
 logger_view_details = logging.getLogger('frontend.views.alljob.view_details')
 logger_permissions = logging.getLogger('permissions')
+netcat_ip = '202.205.84.172'
+netcat_port = 8021
+
 @task
 def uav_flying_status_detector():
 #更改UAV的状态
@@ -166,6 +170,27 @@ def All_Job_Logger(nowuser,province='',city='',district='',code=''):
             +',Checked Alljobs in 1.{ID:'+str(nowuser.id)
             +',province:'+str(province)
             +',code:'+str(code)+'}')
+    #nation = Nation.objects.get(code=code)##找到行政区划的中心点坐标
+    #Sent_All_Job_Log_To_Flume.delay(nowuser, nation.lng, nation.lat)
+
+@task
+def Sent_All_Job_Log_To_Flume(nowuser, lng, lat, port):
+    nc = Netcat(netcat_ip, port)
+    data = {}
+    data['ID'] = nowuser.id
+    data['lng'] = lng
+    data['lat'] = lat
+    data['time'] = timestamp_datetime(time.time())
+    json_data = json.dumps(data)
+    print(json_data)
+    nc.write(json_data+'\n')
+    nc.close()
+
+def timestamp_datetime(v):
+    format = '%Y-%m-%d %H:%M:%S'
+    value = time.localtime(v)
+    dt = time.strftime(format, value)
+    return dt
 
 @task
 def All_Job_View_Details(nowuser,job):
@@ -178,3 +203,10 @@ def All_Job_View_Details(nowuser,job):
             +',each_pay:'+str(job.each_pay)
             +',code:'+str(job.nation)+'}')
 
+# @task
+# def Sent_All_Job_Log_To_Flume():
+#     # start a new Netcat() instance
+#     time.sleep(2)
+#     nc = Netcat(netcat_ip, netcat_port)
+#     nc.write('new' + '\n')
+#     nc.close()
