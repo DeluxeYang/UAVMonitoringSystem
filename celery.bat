@@ -1,1 +1,1 @@
-py -3 manage.py celery worker --loglevel=info
+python3 manage.py celery worker --loglevel=info

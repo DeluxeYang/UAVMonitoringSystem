@@ -95,12 +95,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+'''
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__), '../static').replace('\\','/'),
 )
+'''
+STATIC_ROOT='/root/UAVMonitoringSystem/static/'
 
 LOGIN_URL = '/login/'
 
@@ -109,7 +112,7 @@ MEDIA_ROOT = 'upload/'
 MEDIA_URL = '/upload/'
 
 
-BROKER_URL = 'redis://127.0.0.1:6379/0'
+BROKER_URL = 'redis' + os.environ['REDIS_PORT'][3:]+'/0'
 
 # 使用和Django一样的时区
 CELERY_TIMEZONE = TIME_ZONE
