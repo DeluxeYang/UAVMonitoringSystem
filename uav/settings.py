@@ -27,6 +27,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost', # Also allow FQDN and subdomains
+    '202.205.84.172'
     ]
 
 
@@ -103,7 +104,7 @@ STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), '../static').replace('\\','/'),
 )
 '''
-STATIC_ROOT='/root/UAVMonitoringSystem/static/'
+STATIC_ROOT='/root/UAVMonitoringSystem/UAVMonitoringSystem/static/'
 
 LOGIN_URL = '/login/'
 
@@ -147,120 +148,120 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/django/'+time.strftime('%Y-%m-%d')+'_django.log',
+            'filename': '../log/django/'+time.strftime('%Y-%m-%d')+'_django.log',
         },#Django的log文件
         'file_permissions': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/'+time.strftime('%Y-%m-%d')+'_permissions.log',
+            'filename': '../log/'+time.strftime('%Y-%m-%d')+'_permissions.log',
         },#user_login的log文件
 ##################  USER  ################################################
         'file_user_login': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/user/'+time.strftime('%Y-%m-%d')+'_user_login.log',
+            'filename': '../log/user/'+time.strftime('%Y-%m-%d')+'_user_login.log',
         },#user_login的log文件
         'file_user_profileedit': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/user/'+time.strftime('%Y-%m-%d')+'_user_profileedit.log',
+            'filename': '../log/user/'+time.strftime('%Y-%m-%d')+'_user_profileedit.log',
         },#user_profileedit的log文件
 ##################  JOB  #################################################
         'file_job_add': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/job/'+time.strftime('%Y-%m-%d')+'_job_add.log',
+            'filename': '../log/job/'+time.strftime('%Y-%m-%d')+'_job_add.log',
         },#job_add的log文件
         'file_job_edit': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/job/'+time.strftime('%Y-%m-%d')+'_job_edit.log',
+            'filename': '../log/job/'+time.strftime('%Y-%m-%d')+'_job_edit.log',
         },#job_edit的log文件
         'file_job_delete': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/job/'+time.strftime('%Y-%m-%d')+'_job_delete.log',
+            'filename': '../log/job/'+time.strftime('%Y-%m-%d')+'_job_delete.log',
         },#job_delete的log文件
 ##################  UAV  #################################################
         'file_uav_reg': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uav/'+time.strftime('%Y-%m-%d')+'_uav_reg.log',
+            'filename': '../log/uav/'+time.strftime('%Y-%m-%d')+'_uav_reg.log',
         },#uav_reg的log文件
         'file_uav_edit': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uav/'+time.strftime('%Y-%m-%d')+'_uav_edit.log',
+            'filename': '../log/uav/'+time.strftime('%Y-%m-%d')+'_uav_edit.log',
         },#uav_reg的log文件
         'file_uav_delete': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uav/'+time.strftime('%Y-%m-%d')+'_uav_delete.log',
+            'filename': '../log/uav/'+time.strftime('%Y-%m-%d')+'_uav_delete.log',
         },#uav_reg的log文件
 ##################  UAV_JOB  #############################################
         'file_uav_monitoring': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_monitoring.log',
+            'filename': '../log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_monitoring.log',
         },#uav_monitoring的log文件
         'file_uav_job_detail': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_detail.log',
+            'filename': '../log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_detail.log',
         },#uav_job_detail的log文件
         'file_uav_job_confirm': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_confirm.log',
+            'filename': '../log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_confirm.log',
         },#uav_job_confirm的log文件
         'file_uav_job_apply': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_apply.log',
+            'filename': '../log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_apply.log',
         },#uav_job_confirm的log文件
         'file_uav_job_apply_cancel': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_apply_cancel.log',
+            'filename': '../log/uavjob/'+time.strftime('%Y-%m-%d')+'_uav_job_apply_cancel.log',
         },#uav_job_confirm的log文件
 ##################  ALLJOB  #############################################
         'file_all_job': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job.log',
+            'filename': '../log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job.log',
         },#
         'file_all_job_rtree': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job_rtree.log',
+            'filename': '../log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job_rtree.log',
         },#
         'file_all_job_recommend': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job_recommend.log',
+            'filename': '../log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job_recommend.log',
         },#
         'file_all_job_view_details': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': 'log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job_view_details.log',
+            'filename': '../log/alljob/'+time.strftime('%Y-%m-%d')+'_all_job_view_details.log',
         },#
     },
 ##################  LOGGER  #########################################################################
