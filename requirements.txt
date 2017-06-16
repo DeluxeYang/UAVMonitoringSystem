@@ -6,3 +6,6 @@ djangorestframework==3.4.6
 pyshp==1.2.3
 rtree
 redis
+pillow
+elasticsearch
+mysqlclient

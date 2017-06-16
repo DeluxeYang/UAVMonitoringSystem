@@ -1,6 +1,8 @@
 from rtree import index
 from model.models import *
 index_name = "TheIndex"
+
+
 def myRtree_overwrite():
     idx = index.Index(index_name,overwrite=True)#打开Rtree
     return idx

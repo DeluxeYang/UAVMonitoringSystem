@@ -72,7 +72,7 @@ DATABASES = {
         'NAME': 'django',
         'USER': 'root',
         'PASSWORD':'123456',
-        'HOST': os.environ['MYSQL_PORT_3306_TCP_ADDR'],
+        'HOST': '172.17.0.2',  # os.environ['MYSQL_PORT_3306_TCP_ADDR'],
         'PORT': '3306',
     }
 }
@@ -112,8 +112,8 @@ MEDIA_ROOT = 'upload/'
 
 MEDIA_URL = '/upload/'
 
-
-BROKER_URL = 'redis' + os.environ['REDIS_PORT'][3:]+'/0'
+BROKER_URL = 'redis://172.17.0.3:6379/0'
+# BROKER_URL = 'redis' + os.environ['REDIS_PORT'][3:]+'/0'
 
 # 使用和Django一样的时区
 CELERY_TIMEZONE = TIME_ZONE
