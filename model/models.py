@@ -323,3 +323,30 @@ class UAV_Desc_Recover_THR(models.Model):
     ZMagField = models.FloatField(null=True, blank=True)
     FuelFlow = models.FloatField(null=True, blank=True)
     Fuel = models.FloatField(null=True, blank=True)
+
+
+class JobRecommendByGPS(models.Model):
+    user_id = models.IntegerField()
+    user_nation = models.CharField(max_length=40, null=True, blank=True)
+    lng = models.FloatField(null=True, blank=True)
+    lat = models.FloatField(null=True, blank=True)
+    time = models.DateTimeField(null=True, blank=True)
+
+
+class JobRecommendByDetail(models.Model):
+    user_id = models.IntegerField()
+    user_nation = models.CharField(max_length=40, null=True, blank=True)
+    job_id = models.IntegerField()
+    job_type_id = models.IntegerField()
+    farm_type_id = models.IntegerField()
+    time = models.DateTimeField(null=True, blank=True)
+
+
+class LoggerUserAndJob(models.Model):
+    user_id = models.IntegerField()
+    user_nation = models.CharField(max_length=40, null=True, blank=True)
+    job_id = models.IntegerField()
+    checked = models.BooleanField(default=False)
+    checked_time = models.DateTimeField(null=True, blank=True)
+    applied = models.BooleanField(default=False)
+    applied_time = models.DateTimeField(null=True, blank=True)

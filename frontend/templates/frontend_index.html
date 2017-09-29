@@ -40,5 +40,52 @@
 			<img alt="140x140" src="/static/images/map.jpg" class="img-rounded" style="width:260px;height:162px;"/>
 		</div>
 	</div>
- 
+    <br>
+    {% if job_recommend %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a href="#">根据您的搜索历史为您推荐一下植保作业</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <div id="job_details">
+                            <table id="tab" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>作业流水号</th>
+                                        <th>所属用户</th>
+                                        <th>作业状态</th>
+                                        <th>作物类型</th>
+                                        <th>作业类型</th>
+                                        <th>地点</th>
+                                        <th>开始时间</th>
+                                        <th>价格</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for job in job_recommend %}
+                                        <tr>
+                                            <th>{{ job.number }}</th>
+                                            <th>{{ job.username }}</th>
+                                            <th>{{ job.status }}</th>
+                                            <th>{{ job.farm_type }}</th>
+                                            <th>{{ job.job_type }}</th>
+                                            <th>{{ job.nation }}</th>
+                                            <th>{{ job.start_time }}</th>
+                                            <th>{{ job.each_pay }}</th>
+                                            <th><a href="/alljob/jobdetails/?job={{ job.id }}" target="_blank">详情</a></th>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

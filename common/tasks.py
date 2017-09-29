@@ -10,6 +10,7 @@ import json
 from model.models import *
 from common.myRtree import *
 from common.Netcat import *
+from model.models import JobRecommendByDetail, JobRecommendByGPS, Nation, LoggerUserAndJob
 
 from django.contrib.auth import get_user_model
 django.setup()#不加这个会出错，models aren't loaded yet
@@ -142,6 +143,9 @@ def All_Job_Rtree_Logger(user,lng,lat):
                 +',Check Alljob Rtree Successed.'
                 +'{ID:'+str(user.id)+',lng:'+str(lng)
                 +',lat:'+str(lat)+',code:'+str(code)+'}')
+            user_id = user.id if user.id else 0
+            JobRecommendByGPS.objects.create(user_id=int(user_id), lng=lng, lat=lat,
+                                             time=datetime.datetime.now())
             return "DONE"
     except:
         logger_rtree.error('\n'+__name__+','+user.username
@@ -170,6 +174,13 @@ def All_Job_Logger(nowuser,province='',city='',district='',code=''):
             +',Checked Alljobs in 1.{ID:'+str(nowuser.id)
             +',province:'+str(province)
             +',code:'+str(code)+'}')
+    user_id = nowuser.id if nowuser.id else 0
+    nation = Nation.objects.get(code=code)
+    JobRecommendByGPS.objects.create(user_id=int(user_id),
+                                     lng=nation.lng, lat=nation.lat,
+                                     user_nation=MyUser.objects.get(id=user_id).nation,
+                                     time=datetime.datetime.now())
+    return "YES!!!!"
     #nation = Nation.objects.get(code=code)##找到行政区划的中心点坐标
     #Sent_All_Job_Log_To_Flume.delay(nowuser, nation.lng, nation.lat)
 
@@ -186,11 +197,13 @@ def Sent_All_Job_Log_To_Flume(nowuser, lng, lat, port):
     nc.write(json_data+'\n')
     nc.close()
 
+
 def timestamp_datetime(v):
     format = '%Y-%m-%d %H:%M:%S'
     value = time.localtime(v)
     dt = time.strftime(format, value)
     return dt
+
 
 @task
 def All_Job_View_Details(nowuser,job):
@@ -202,6 +215,33 @@ def All_Job_View_Details(nowuser,job):
             +',farm_type_id:'+str(job.farm_type_id)
             +',each_pay:'+str(job.each_pay)
             +',code:'+str(job.nation)+'}')
+    user_id = nowuser.id if nowuser.id else 0
+    JobRecommendByDetail.objects.create(user_id=int(user_id), job_id=job.id,
+                                        job_type_id=job.job_type_id, farm_type_id=job.farm_type_id,
+                                        time=datetime.datetime.now(),
+                                        user_nation=MyUser.objects.get(id=user_id).nation,)
+    if LoggerUserAndJob.objects.filter(user_id=int(user_id), job_id=job.id).exists():
+        _instance = LoggerUserAndJob.objects.get(user_id=int(user_id), job_id=job.id)
+        _instance.checked = True
+        _instance.checked_time = datetime.datetime.now()
+        _instance.save()
+    else:
+        LoggerUserAndJob.objects.create(user_id=int(user_id), job_id=job.id,
+                                        user_nation=MyUser.objects.get(id=user_id).nation,
+                                        checked=True, checked_time=datetime.datetime.now())
+
+@task
+def all_job_apply(user, job):
+    user_id = user.id
+    if LoggerUserAndJob.objects.filter(user_id=int(user_id), job_id=job.id).exists():
+        _instance = LoggerUserAndJob.objects.get(user_id=int(user_id), job_id=job.id)
+        _instance.applied = True
+        _instance.applied_time = datetime.datetime.now()
+        _instance.save()
+    else:
+        LoggerUserAndJob.objects.create(user_id=int(user_id), job_id=job.id,
+                                        user_nation=MyUser.objects.get(id=user_id).nation,
+                                        applied=True, applied_time=datetime.datetime.now())
 
 # @task
 # def Sent_All_Job_Log_To_Flume():

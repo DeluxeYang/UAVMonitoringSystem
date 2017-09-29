@@ -65,6 +65,7 @@ def frontend_job_details(request):
                     job_detail.confirm = 0
                     job_detail.save()
                     messages.success(request, '申请成功')
+                    all_job_apply.delay(nowuser, job)  # 日志
                     logger_apply.info('\n'+__name__+','+nowuser.username
                         +',Apply a UAVJOB Successed.{ID:'+str(nowuser.id)
                         +',uav_id:'+str(job_detail.uav.id)
@@ -77,7 +78,7 @@ def frontend_job_details(request):
                         +',job_id:'+str(job_id)+'}')
                     messages.warning(request, '申请失败 与该无人机的其他作业时间冲突')
         else:###没有数据提交时执行
-            All_Job_View_Details.delay(nowuser,job)#即查看该作业
+            All_Job_View_Details.delay(nowuser, job)#即查看该作业
     except:
         logger_view_details.error('\n'+__name__+','+nowuser.username
             +',View a Job Details Failed. {ID:'+str(nowuser.id)

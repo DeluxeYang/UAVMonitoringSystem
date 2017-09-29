@@ -38,6 +38,8 @@ def Rtree_Jobs_Recommend(user):
            return False 
     #except:
         #return False
+
+
 def Job_List_Generator(job_list):
     for i in job_list:
         job = Job.objects.get(id=i)
