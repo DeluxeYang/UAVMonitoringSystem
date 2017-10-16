@@ -41,11 +41,11 @@ def frontend_profile_edit(request):
 			myuser.phone = request.POST.get("phone")
 			myuser.describe = request.POST.get("describe")
 			myuser.save()
-			logger.info('\n'+__name__+', '+myuser.username
-				+', Changed Profile Success, The Origianl are {ID:'+str(myuser.id)
-				+',email:'+original_email+',headshot:'+str(original_headshot)
-				+',address:'+original_address+',nation:'+original_nation
-				+',phone:'+original_phone+',describe:'+original_describe+'}')
+			# logger.info('\n'+__name__+', '+myuser.username
+			# 	+', Changed Profile Success, The Origianl are {ID:'+str(myuser.id)
+			# 	+',email:'+original_email+',headshot:'+str(original_headshot)
+			# 	+',address:'+original_address+',nation:'+original_nation
+			# 	+',phone:'+original_phone+',describe:'+original_describe+'}')
 			messages.success(request, '修改成功')
 		except:
 			logger.info('\n'+__name__+', '+myuser.username+', {ID:'+str(myuser.id)
